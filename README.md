@@ -69,7 +69,21 @@ Issues were added on the Github Projects Boards, a builtin management tool from 
 ### Solved bugs
 ### Known bugs
 ### Deployment
-
+# First Deployment
+The project was deployed in the beginning of the development. Following steps were taken with the first deployment:
+- Django and supporting libraries were installed.
+- File for the development environment, env.py, was created  and added to the .gitignore file.
+- Cloudinary storage was set up for the templates, static files and media files.
+- Procfile was created to declare gunicorn as the webserver.
+- Create a Heroku app, and set the location to EU.
+- Open the app dashboard and go to 'Settings' and then 'Reveal Config Vars' and add following key-value pairs:
+    - CLOUDINARY_URL:           [Your cloudinary URL goes here]
+    - DATABASE_URL:             [Your Elephant SQL URL goes here]
+    - DISABLE_COLLECTSTATIC:    1
+    - PORT:                     8000
+    - SECRET_KEY:               [secret key would go here]
+- Within the 'Deploy'- tab 'Github' was selected  as the Deployemnt method and app was connected to the Github repository and Automatic deployes were enabled.
+    
 ## Credits
 
 
