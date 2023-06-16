@@ -1,1 +1,1 @@
-web: gunicorn.dbts_project.wsgi
+web: gunicorn dbts_project.wsgi
