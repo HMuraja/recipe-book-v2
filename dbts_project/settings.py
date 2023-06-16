@@ -32,7 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-hmuraja-p4recipebook-ec2mmbteq1v.ws-eu99.gitpod.io',
-    'localhost', 'dbts-recipe-app.herokuapp.com']
+    'localhost', 'dbts-recipe-app-f9995cb6b9df.herokuapp.com']
 
 
 # Application definition
