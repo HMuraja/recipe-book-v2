@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-hmuraja-p4recipebook-ec2mmbteq1v.ws-eu99.gitpod.io',
+    '8000-hmuraja-p4recipebook-ec2mmbteq1v.ws-eu100.gitpod.io',
     'localhost', 'dbts-recipe-app-f9995cb6b9df.herokuapp.com']
 
 

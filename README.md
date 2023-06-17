@@ -75,7 +75,7 @@ The project was deployed in the beginning of the development. Following steps we
 - File for the development environment, env.py, was created  and added to the .gitignore file.
 - Cloudinary storage was set up for the templates, static files and media files.
 - Procfile was created to declare gunicorn as the webserver.
-- Create a Heroku app, and set the location to EU.
+- A Heroku app was created and location set to EU.
 - In 'Settings' tab of the created apps dashboard Config Vars were added by clikcing 'Reveal Config Vars' and adding the following key-value pairs:
     - CLOUDINARY_URL:           [Your cloudinary URL goes here]
     - DATABASE_URL:             [Your Elephant SQL URL goes here]
