@@ -1,0 +1,59 @@
+body {
+    background-color: #F9FAFC;
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    font-family: 'Josefin Slab', serif;
+    color: #8b222b;
+    font-weight: 500;
+}
+
+.brand {
+    text-decoration: none;
+    text-align: center;
+}
+
+.card-title {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    color: #292929;
+    font-weight: 300;
+}
+
+.recipe-card-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.dark-bg {
+    background-color: #445261;
+}
+
+.main-bg {
+    background-color: #fff;
+}
+
+.card {
+    border:transparent;
+    background-color: #F9FAFC;
+}
+
+.hr-margin{
+    margin: 2px;
+}
+
+.image-container {
+    position: relative;
+}
+
+.post-link {
+    text-decoration: none;
+    color: #030303;
+}
+
+.post-link:hover,
+.page-link {
+    color: #a11c30;
+}
