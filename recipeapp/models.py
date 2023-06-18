@@ -27,7 +27,7 @@ class Recipe(models.Model):
         User, related_name='recipe_like', blank=True)
 
     class Meta:
-        ordering = ['-created_on']    
+        ordering = ['-created_on']
 
     # Function that returns name of the recipe
     def __str__(self):
@@ -43,6 +43,3 @@ class Recipe(models.Model):
 
     def string_of_edited_on(self):
         return self.edited_on.strftime("%A %d %B %Y")
-
-
-
