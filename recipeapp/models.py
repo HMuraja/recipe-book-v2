@@ -5,19 +5,20 @@ from django import forms
 
 
 class Recipe(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=80, unique=False)
+    id = models.AutoField(primary_key=True, unique=False)
+    name = models.CharField(max_length=80, default=None)
     slug = models.SlugField(max_length=80, unique=True)
     region = models.CharField(max_length=80)
-    city = models.CharField(max_length=80)
+    city = models.CharField(max_length=80, blank=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="my_recipe"
     )
-    featured_image = CloudinaryField('image', default='placeholder')
+    featured_image = CloudinaryField(
+        'image', default='placeholder', blank=True)
     excerpt = models.TextField(blank=True)
-    prep_time = models.PositiveIntegerField()
-    cooking_time = models.PositiveIntegerField()
-    serves = models.PositiveIntegerField()
+    prep_time = models.PositiveIntegerField(blank=True)
+    cooking_time = models.PositiveIntegerField(blank=True)
+    serves = models.PositiveIntegerField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now=True)
     description = models.TextField()
