@@ -87,19 +87,6 @@ class ShareRecipe(View):
     def post(self, request, *args, **kwargs):
         form = self.form_type(request.POST, request.FILES)
         queryset = Recipe.objects.all()
-        
-        """
-        for instance in queryset:
-        if form.instance.slug == slugify(form.instance.name):
-            return render(
-                request,
-                'recipe_share.html',
-                {
-                    'share_recipe_form': form,
-                    'failed': True,
-                    'name_taken': True,
-                }
-            ) """
 
         if form.is_valid():
             # Form is valid, process the data and redirect
@@ -117,6 +104,7 @@ class ShareRecipe(View):
         else:
             # Form is invalid, re-render the template with
             # the form and failure flag
+            console.log("I made it")
             return render(
                 request,
                 'recipe_share.html',

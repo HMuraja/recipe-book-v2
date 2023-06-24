@@ -30,7 +30,7 @@ class Recipe(models.Model):
         ('None', 'No Specific Region'),
     )
 
-    name = models.CharField(max_length=80, default=None)
+    name = models.CharField(max_length=80, blank=False, null=False)
     slug = models.SlugField(max_length=80, unique=True)
     region = models.CharField(
         choices=REGIONS, max_length=80, null=False, default='None')
