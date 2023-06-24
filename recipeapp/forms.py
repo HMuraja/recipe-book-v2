@@ -11,7 +11,6 @@ class CommentForm(forms.ModelForm):
 
 class ShareRecipeForm(forms.ModelForm):
     name = forms.CharField(required=True)
-    region = forms.CharField(required=True)
 
     class Meta:
         model = Recipe
@@ -19,6 +18,7 @@ class ShareRecipeForm(forms.ModelForm):
             'description': SummernoteWidget(),
             'method': SummernoteWidget(),
             'ingredients': SummernoteWidget(),
+            'region': forms.Select(),
         }
 
         fields = (
@@ -35,3 +35,4 @@ class ShareRecipeForm(forms.ModelForm):
             'ingredients',
             'method',
             )
+        

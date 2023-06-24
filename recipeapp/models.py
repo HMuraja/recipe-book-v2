@@ -5,10 +5,35 @@ from django import forms
 
 
 class Recipe(models.Model):
+    REGIONS = (
+        ('Abruzzo', 'Abruzzo'),
+        ('Aosta valley', 'Aosta valley'),
+        ('Apulia', 'Apulia'),
+        ('Basilicata', 'Basilicata'),
+        ('Calabria', 'Calabria'),
+        ('Campania', 'Calabria'),
+        ('Emilia-Romagna', 'Emilia-Romagna'),
+        ('Friuli-Venezia Giulia', 'Friuli-Venezia Giulia'),
+        ('Lazio', 'Lazio'),
+        ('Liguria', 'Liguria'),
+        ('Lombardy', 'Lombardy'),
+        ('Marche', 'Marche'),
+        ('Molise', 'Molise'),
+        ('Piedmont', 'Piedmont'),
+        ('Sardinia', 'Sardinia'),
+        ('Sicily', 'Sicily'),
+        ('Trentino-South Tyrol', 'Trentino-South Tyrol'),
+        ('Tuscany', 'Tuscany'),
+        ('Umbria', 'Umbria'),
+        ('Veneto', 'Veneto'),
+        ('Unknown', 'Region Unknown'),
+        ('None', 'No Specific Region'),
+    )
 
     name = models.CharField(max_length=80, default=None)
     slug = models.SlugField(max_length=80, unique=True)
-    region = models.CharField(max_length=80)
+    region = models.CharField(
+        choices=REGIONS, max_length=80, null=False, default='None')
     city = models.CharField(max_length=80, blank=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="my_recipe"
