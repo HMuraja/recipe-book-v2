@@ -30,10 +30,10 @@ class Recipe(models.Model):
         ('None', 'No Specific Region'),
     )
 
-    name = models.CharField(max_length=80, blank=False, null=False)
+    name = models.CharField(max_length=80)
     slug = models.SlugField(max_length=80, unique=True)
     region = models.CharField(
-        choices=REGIONS, max_length=80, null=False, default='None')
+        choices=REGIONS, max_length=80, default='None')
     city = models.CharField(max_length=80, blank=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="my_recipe"
@@ -45,9 +45,9 @@ class Recipe(models.Model):
             "image/upload/v1687522627/recipe-placeholder.jpg"
             )
         )
-    excerpt = models.TextField(blank=True)
-    prep_time = models.PositiveIntegerField(blank=True)
-    serves = models.PositiveIntegerField(blank=True)
+    excerpt = models.TextField(max_length=80, blank=True)
+    prep_time = models.PositiveIntegerField()
+    serves = models.PositiveIntegerField()
     created_on = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now=True)
     description = models.TextField()

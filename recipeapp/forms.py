@@ -1,5 +1,6 @@
 from .models import Comment, Recipe
 from django import forms
+from django.core.exceptions import ValidationError
 
 
 class CommentForm(forms.ModelForm):
@@ -9,7 +10,6 @@ class CommentForm(forms.ModelForm):
 
 
 class ShareRecipeForm(forms.ModelForm):
-    name = forms.CharField(required=True)
 
     class Meta:
         model = Recipe

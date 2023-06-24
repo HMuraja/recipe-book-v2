@@ -86,10 +86,9 @@ class ShareRecipe(View):
 
     def post(self, request, *args, **kwargs):
         form = self.form_type(request.POST, request.FILES)
-        queryset = Recipe.objects.all()
+        print("we got through")
 
         if form.is_valid():
-            # Form is valid, process the data and redirect
             unique_string = get_random_string(length=5)
             form.instance.author = request.user
             form.instance.slug = slugify(
@@ -102,9 +101,6 @@ class ShareRecipe(View):
                 {'posted': True}
             )
         else:
-            # Form is invalid, re-render the template with
-            # the form and failure flag
-            console.log("I made it")
             return render(
                 request,
                 'recipe_share.html',
