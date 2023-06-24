@@ -28,8 +28,6 @@ class ShareRecipeForm(forms.ModelForm):
             'featured_image',
             'excerpt',
             'prep_time',
-            'cooking_time',
-            'cooking_time',
             'serves',
             'description',
             'ingredients',

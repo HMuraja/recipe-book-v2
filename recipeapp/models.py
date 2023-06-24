@@ -42,7 +42,6 @@ class Recipe(models.Model):
         'image', default='placeholder', blank=True)
     excerpt = models.TextField(blank=True)
     prep_time = models.PositiveIntegerField(blank=True)
-    cooking_time = models.PositiveIntegerField(blank=True)
     serves = models.PositiveIntegerField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now=True)
