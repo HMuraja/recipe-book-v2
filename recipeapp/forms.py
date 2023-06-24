@@ -33,3 +33,16 @@ class ShareRecipeForm(forms.ModelForm):
             'ingredients',
             'method',
             )
+
+        labels = {
+            'name': ('Recipe Name:'),
+            'region': ('Select the Region:'),
+            'city': ('Type the City:'),
+            'featured_image': ('Add an Image:'),
+            'excerpt': ('Summary:'),
+            'prep_time': ('Preparation Time (min):'),
+            'serves': ('Serves:'),
+            'description': ('Description:'),
+            'ingredients': ('Ingerdients:'),
+            'method': ('Method:'),
+        }
