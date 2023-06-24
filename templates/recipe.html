@@ -15,11 +15,7 @@
                 </p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                {% if "placeholder" in recipe.featured_image.url %}
-                <img src="https://res.cloudinary.com/dyoueyepq/image/upload/v1687522627/recipe-placeholder.jpg" width="100%">
-                {% else %}
                 <img src=" {{ recipe.featured_image.url }}" width="100%">
-                {% endif %}
             </div>
         </div>
     </div>

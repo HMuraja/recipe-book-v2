@@ -39,7 +39,12 @@ class Recipe(models.Model):
         User, on_delete=models.CASCADE, related_name="my_recipe"
     )
     featured_image = CloudinaryField(
-        'image', default='placeholder', blank=True)
+        'image', blank=True,
+        default=(
+            "https://res.cloudinary.com/dyoueyepq/"
+            "image/upload/v1687522627/recipe-placeholder.jpg"
+            )
+        )
     excerpt = models.TextField(blank=True)
     prep_time = models.PositiveIntegerField(blank=True)
     serves = models.PositiveIntegerField(blank=True)

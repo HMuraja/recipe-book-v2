@@ -33,4 +33,3 @@ class ShareRecipeForm(forms.ModelForm):
             'ingredients',
             'method',
             )
-        

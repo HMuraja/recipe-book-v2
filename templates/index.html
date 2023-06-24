@@ -29,12 +29,7 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
-                                {% if "placeholder" in recipe.image.url %}
-                                <img class="card-img-top"
-                                    src="https://res.cloudinary.com/dyoueyepq/image/upload/v1687522627/recipe-placeholder.jpg">
-                                {% else %}
                                 <img class="card-img-top" src=" {{ recipe.featured_image.url }}">
-                                {% endif %}
                             </div>
                             <a href="{% url 'recipe_detail' recipe.slug %}" class="post-link">
                                 <div class="recipe-card-layout">
