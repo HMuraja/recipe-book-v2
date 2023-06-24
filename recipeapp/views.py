@@ -96,7 +96,7 @@ class ShareRecipe(View):
                 {'posted': True}
             )
         else:
-            # Form is invalid, re-render the template with 
+            # Form is invalid, re-render the template with
             # the form and failure flag
             return render(
                 request,

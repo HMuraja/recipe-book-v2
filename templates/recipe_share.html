@@ -27,7 +27,7 @@
     <!-- Crispy Form is shared -->
     <div class="row">
         <div class="col">
-            <form method="post" style="margin-top: 1.3em;">
+            <form method="post" style="margin-top: 1.3em;" enctype="multipart/form-data">
                 {{ share_recipe_form | crispy }}
                 {% csrf_token %}
                 <button type="submit" class="btn btn-warning mt-1">Submit</button>
