@@ -81,6 +81,12 @@ h1 {
     height: 100%;
 }
 
+.recipe-title {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    color: #F5F0E6;
+    font-weight: 300;
+
+}
 
 .post-title {
     font-family: 'Fira Sans Condensed', sans-serif;
@@ -97,4 +103,15 @@ h1 {
 .recipe-ingerients{
     background-color: transparent;
 
+}
+
+.recipe-sub-headers{
+    background-color: #333333;
+    font-family: 'Lato', sans-serif;
+}
+
+.recipe-body{
+    background-color: #333333;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
 }

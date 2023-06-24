@@ -5,7 +5,7 @@ from django import forms
 
 
 class Recipe(models.Model):
-    id = models.AutoField(primary_key=True, unique=False)
+
     name = models.CharField(max_length=80, default=None)
     slug = models.SlugField(max_length=80, unique=True)
     region = models.CharField(max_length=80)

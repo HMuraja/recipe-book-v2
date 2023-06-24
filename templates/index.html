@@ -31,14 +31,14 @@
                             <div class="image-container">
                                 {% if "placeholder" in recipe.image.url %}
                                 <img class="card-img-top"
-                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                    src="https://res.cloudinary.com/dyoueyepq/image/upload/v1687522627/recipe-placeholder.jpg">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ recipe.featured_image.url }}">
                                 {% endif %}
                             </div>
                             <a href="{% url 'recipe_detail' recipe.slug %}" class="post-link">
                                 <div class="recipe-card-layout">
-                                    <h2 class="card-title recipe-title mb-0">{{ recipe.name }}</h2>
+                                    <h2 class="card-title mb-0">{{ recipe.name }}</h2>
                                     <p class="text-muted h5 mb-0"><i class="far fa-heart"></i>
                                         {{ recipe.number_of_likes }}</p>
                                 </div>

@@ -82,29 +82,28 @@ class ShareRecipe(View):
             }
         )
 
-
-def post(self, request, *args, **kwargs):
-    form = self.form_type(request.POST, request.FILES)
-    if form.is_valid():
-        # Form is valid, process the data and redirect
-        form.instance.author = request.user
-        form.instance.slug = slugify(form.instance.name)
-        checked_form = form.save(commit=False)
-        checked_form.save()
-        return render(
-            request,
-            'recipe_share.html',
-            {'posted': True}
-        )
-    else:
-        # Form is invalid, re-render the template with 
-        # the form and failure flag
-        return render(
-            request,
-            'recipe_share.html',
-            {
-                'share_recipe_form': form,
-                'failed': True,
-                'posted': False,
-            }
-        )
+    def post(self, request, *args, **kwargs):
+        form = self.form_type(request.POST, request.FILES)
+        if form.is_valid():
+            # Form is valid, process the data and redirect
+            form.instance.author = request.user
+            form.instance.slug = slugify(form.instance.name)
+            checked_form = form.save(commit=False)
+            checked_form.save()
+            return render(
+                request,
+                'recipe_share.html',
+                {'posted': True}
+            )
+        else:
+            # Form is invalid, re-render the template with 
+            # the form and failure flag
+            return render(
+                request,
+                'recipe_share.html',
+                {
+                    'share_recipe_form': form,
+                    'failed': True,
+                    'posted': False,
+                }
+            )

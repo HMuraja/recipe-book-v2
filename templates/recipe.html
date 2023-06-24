@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row g-0 flex-sm-row ">
             <div class="col-md-6 masthead-text d-flex flex-column align-items-center justify-content-center ">
-                <h1 class="post-title">{{ recipe.name }}</h1>
+                <h1 class="recipe-title">{{ recipe.name }}</h1>
                 <p>{{ recipe.region }}, {{ recipe.city }}</p>
                 <p>By {{ recipe.author }}</p>
                 <p>{{ recipe.created_on }}</p>
@@ -16,7 +16,7 @@
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 {% if "placeholder" in recipe.featured_image.url %}
-                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
+                <img src="https://res.cloudinary.com/dyoueyepq/image/upload/v1687522627/recipe-placeholder.jpg" width="100%">
                 {% else %}
                 <img src=" {{ recipe.featured_image.url }}" width="100%">
                 {% endif %}
@@ -28,20 +28,20 @@
 <div class="container">
     <div class="row">
         <div class="col mt-1">
-            <h2>About the Recipe</h2>
-            <p>{{ recipe.description | safe }}</p>
+            <h2 clss="recipe-sub-headers">About the Recipe</h2>
+            <p clss="recipe-body">{{ recipe.description | safe }}</p>
         </div>
     </div>
     <div class="row border-top-bottom mt-1">
         <div class="col-md-auto card recipe-ingerients">
-            <h2>Ingredients</h2>
-            <p>{{ recipe.ingredients | safe }}</p>
+            <h2 clss="recipe-sub-headers">Ingredients</h2>
+            <p clss="recipe-body">{{ recipe.ingredients | safe }}</p>
         </div>
     </div>
     <div class="row">
         <div class="col mt-1">
-            <h2 >Method</h2>
-            <p>{{ recipe.method | safe }}</p>
+            <h2 clss="recipe-sub-headers">Method</h2>
+            <p clss="recipe-body">{{ recipe.method | safe }}</p>
         </div>
     </div>
 </div>
