@@ -4,6 +4,7 @@ from django.views import generic, View
 from .models import Recipe
 from .forms import CommentForm, ShareRecipeForm
 from django.template.defaultfilters import slugify
+from django.utils.crypto import get_random_string
 
 
 class RecipeSelection(generic.ListView):
@@ -79,15 +80,33 @@ class ShareRecipe(View):
             self.template_name,
             {
                 'share_recipe_form': form,
+                'user': request.user
             }
         )
 
     def post(self, request, *args, **kwargs):
         form = self.form_type(request.POST, request.FILES)
+        queryset = Recipe.objects.all()
+        
+        """
+        for instance in queryset:
+        if form.instance.slug == slugify(form.instance.name):
+            return render(
+                request,
+                'recipe_share.html',
+                {
+                    'share_recipe_form': form,
+                    'failed': True,
+                    'name_taken': True,
+                }
+            ) """
+
         if form.is_valid():
             # Form is valid, process the data and redirect
+            unique_string = get_random_string(length=5)
             form.instance.author = request.user
-            form.instance.slug = slugify(form.instance.name)
+            form.instance.slug = slugify(
+                form.instance.name+" " + unique_string)
             checked_form = form.save(commit=False)
             checked_form.save()
             return render(
