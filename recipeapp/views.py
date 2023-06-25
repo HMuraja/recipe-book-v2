@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.http import HttpResponseRedirect
 from django.views import generic, View
 from .models import Recipe
@@ -6,6 +6,7 @@ from .forms import CommentForm, ShareRecipeForm
 from django.template.defaultfilters import slugify
 from django.utils.crypto import get_random_string
 from django_summernote.admin import SummernoteModelAdmin
+from django.contrib import messages
 
 
 class RecipeSelection(generic.ListView):
@@ -152,7 +153,8 @@ class EditRecipe(View):
                 self.template_name,
                 {
                     'form': form,
-                    'posted': True
+                    'posted': True,
+                    'recipe': recipe,
                 }
             )
         else:
@@ -165,3 +167,20 @@ class EditRecipe(View):
                     'posted': False,
                 }
             )
+
+
+class DeleteRecipe(View):
+    print("made it 1")
+    model = Recipe
+
+    def get(self, request, pk, *args, **kwargs):
+        """
+        Get method to render template and form.
+        """
+        print("made it 1")
+        recipe = get_object_or_404(Recipe, pk=pk)
+        recipe_name = recipe.name
+        recipe.delete()
+        messages.success(request, f'{recipe_name} recipe deleted')
+
+        return redirect(reverse('home'))
