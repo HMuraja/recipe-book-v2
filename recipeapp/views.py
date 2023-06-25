@@ -5,6 +5,7 @@ from .models import Recipe
 from .forms import CommentForm, ShareRecipeForm
 from django.template.defaultfilters import slugify
 from django.utils.crypto import get_random_string
+from django_summernote.admin import SummernoteModelAdmin
 
 
 class RecipeSelection(generic.ListView):

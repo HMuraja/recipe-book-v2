@@ -1,6 +1,7 @@
 from .models import Comment, Recipe
 from django import forms
 from django.core.exceptions import ValidationError
+from django_summernote.widgets import SummernoteWidget
 
 
 class CommentForm(forms.ModelForm):
@@ -15,6 +16,9 @@ class ShareRecipeForm(forms.ModelForm):
         model = Recipe
         widgets = {
             'region': forms.Select(),
+            'description': SummernoteWidget(),
+            'ingredients': SummernoteWidget(),
+            'method': SummernoteWidget(),
         }
 
         fields = (

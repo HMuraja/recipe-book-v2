@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'django_summernote',
     'crispy_forms',
     'allauth',
     'allauth.account',
@@ -61,6 +62,27 @@ LOGOUT_REDIRECT_URL = '/'
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+SUMMERNOTE_CONFIG = {
+
+    'summernote': {
+        'width': '100%',
+        'height': '300',
+
+
+        # Toolbar customization
+        # https://summernote.org/deep-dive/#custom-toolbar-popover
+        'toolbar': [
+            ['style', ['bold', 'underline', 'clear']],
+            ['fontname', ['fontname']],
+            ['fontsize', ['fontsize']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['view', ['fullscreen']],
+        ],
+    },
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

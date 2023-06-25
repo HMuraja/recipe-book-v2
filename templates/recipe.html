@@ -2,50 +2,64 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-<div class="masthead">
-    <div class="container-fluid">
-        <div class="row g-0 flex-sm-row ">
-            <div class="col-md-6 masthead-text d-flex flex-column align-items-center justify-content-center ">
-                <h1 class="recipe-title">{{ recipe.name }}</h1>
-                <p>{{ recipe.region }}, {{ recipe.city }}</p>
-                <p>By {{ recipe.author }}</p>
-                <p>{{ recipe.created_on }}</p>
-                <p> <i class="far fa-heart"></i>
-                    {{recipe.number_of_likes}}
-                </p>
-            </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                <img src=" {{ recipe.featured_image.url }}" width="100%">
-            </div>
+
+<div class="container-fluid">
+    <div class="row g-0 flex-sm-row-reverse ">
+        <div class="d-md-block col-md-6 masthead-image">
+            <img src=" {{ recipe.featured_image.url }}" width="100%">
+        </div>
+        <div class="col-md-6 masthead-text d-flex flex-column align-items-center justify-content-center ">
+            <h1 class="recipe-title text-center">{{ recipe.name }}</h1>
+            <p>{{ recipe.region }}, {{ recipe.city }}</p>
+            <p>By {{ recipe.author }}</p>              
+            <p> <i class="far fa-heart"></i>
+                {{recipe.number_of_likes}}
+            </p>
         </div>
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
+
+<div class="container-fluid g-4 mt-3">
+    <div class="row g-3 light-grey ">
         <div class="col mt-1">
             <h2 clss="recipe-sub-headers">About the Recipe</h2>
             <p clss="recipe-body">{{ recipe.description | safe }}</p>
         </div>
-    </div>
-    <div class="row border-top-bottom mt-1">
+    </div> 
+
+    <div class="row g-3 light-grey ">
+        <hr style="width: 50%;">
         <div class="col-md-auto card recipe-ingerients">
             <h2 clss="recipe-sub-headers">Ingredients</h2>
+            <p>Serves: {{ recipe.serves }}</p>
+            <p>Time: {{ recipe.prep_time }} mins</p> 
             <p clss="recipe-body">{{ recipe.ingredients | safe }}</p>
         </div>
+
+        <hr style="width: 50%;">
     </div>
-    <div class="row">
+
+    <div class="row g-3 light-grey ">
         <div class="col mt-1">
             <h2 clss="recipe-sub-headers">Method</h2>
             <p clss="recipe-body">{{ recipe.method | safe }}</p>
         </div>
     </div>
+
+    <div class="row g-3 light-grey pt-3">
+        
+        <div class="col">
+            <p> Date: {{ recipe.created_on }}</p>
+        </div>
+        <a class="btn btn-warning m-1" href="{% url 'recipe_edit' %}" type="button"></a>
+    </div>
+
 </div>
 
-<div class="container">
+<div class="container mt-3">
     <div class="row">
         <div class="col">
-
             {% if user.is_authenticated %}
             <p>Leave a comment:</p>
             <form method="post" style="margin-top: 1.3em;">
@@ -55,7 +69,8 @@
             </form>
             {% endif %}
 
-            <hr>
+            <hr >
+
             <h3>Comments:</h3>
             <div class="col-1">
                 {% with comments.count as total_comments %}
