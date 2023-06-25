@@ -116,11 +116,13 @@ class ShareRecipe(View):
 class EditRecipe(View):
     model = Recipe
     template_name = 'edit_recipe.html'
+    print("made it to View")
 
     def get(self, request, pk, *args, **kwargs):
         """
         Get method to render template and form.
         """
+        print("made it to GET method")
 
         recipe = Recipe.objects.get(pk=pk)
         form = ShareRecipeForm(instance=recipe)
@@ -170,14 +172,12 @@ class EditRecipe(View):
 
 
 class DeleteRecipe(View):
-    print("made it 1")
     model = Recipe
 
     def get(self, request, pk, *args, **kwargs):
         """
         Get method to render template and form.
         """
-        print("made it 1")
         recipe = get_object_or_404(Recipe, pk=pk)
         recipe_name = recipe.name
         recipe.delete()

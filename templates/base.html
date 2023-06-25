@@ -34,21 +34,21 @@
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li class="nav-item ms-auto">
-                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                            <a class="nav-link active " aria-current="page" href="{% url 'home' %}">Home</a>
                         </li>
                         {% if user.is_authenticated %}
-                        <li class="nav-item ms-auto">
+                        <li class="nav-item ms-auto ">
                             <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                         </li>
-                        <li class="nav-item ms-auto">
+                        <li class="nav-item ms-auto ">
                             <a class="nav-link" href="{% url 'recipe_share' %}" type="button">
                                 Share a Recipe</a>
                         </li>
                         {% else %}
-                        <li class="nav-item ms-auto">
+                        <li class="nav-item ms-auto ">
                             <a class="nav-link" href="{% url 'account_signup' %}">Signup</a>
                         </li>
-                        <li class="nav-item ms-auto">
+                        <li class="nav-item ms-auto ">
                             <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                         </li>
                         {% endif %}
@@ -72,7 +72,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-4">
+    <footer class="footer mt-auto py-4 ">
         <hr />
         <p class="m-0 text-center text-dark">Find out more: <br> 
             <a href="https://github.com/HMuraja/mythology-quiz" rel="noopener" aria-label="Visit the authors GitHub profile (opens in a new tab)" class="text-dark" target="_blank">

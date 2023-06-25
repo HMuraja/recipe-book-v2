@@ -2,7 +2,7 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-
+<!-- Recipe header -->
 <div class="container-fluid">
     <div class="row g-0 flex-sm-row-reverse ">
         <div class="d-md-block col-md-6 masthead-image">
@@ -19,8 +19,8 @@
     </div>
 </div>
 
-
-<div class="container-fluid g-4 mt-5">
+<!-- Recipe Content -->
+<div class="container-fluid g-4 mt-5 container-max-width">
     <div class="row g-3 light-grey ">
         <div class="col mt-1">
             <h2 clss="recipe-sub-headers">About the Recipe</h2>
@@ -48,9 +48,13 @@
 
     <div class="row g-3 light-grey pt-3">
         <div class="col">
+            <!-- Date is displayed here -->
             <p> Date: {{ recipe.created_on }}</p>
+            <!-- Buttons for logged in users -->
             {% if user.is_authenticated  %}
+            <!-- Edit button and link to the template -->
             <a class="btn btn-warning m-1" href="{% url 'edit_recipe' recipe.id %}" type="button"> Edit Recipe</a>
+            <!-- Delete Button -->
             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal">
                 Delete Recipe
               </button>
@@ -58,63 +62,71 @@
         </div>
     </div>
 
-</div>
-
-<div class="modal fade" id="delete-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content modal-body">
-            <h3 class="text-danger text-center">Delete recipe</h3>
-            <p>
-                Are you sure you want to delete {{ recipe.name }} this recipe?
-            </p>
-            <div class="modal-footer d-flex justify-content-center">
-                <a class="btn btn-danger m-1" href="{% url 'delete_recipe' recipe.id %}" type="button"> Yes, Delete</a>
-                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">No, Return</button>
-            </div>
-        </div>
-    </div>  
-  </div>
-
-<div class="container mt-3">
-    <div class="row">
-        <div class="col">
-            {% if user.is_authenticated %}
-            <p>Leave a comment:</p>
-            <form method="post" style="margin-top: 1.3em;">
-                {{ comment_form | crispy }}
-                {% csrf_token %}
-                <button type="submit" class="btn btn-warning mt-1">Submit</button>
-            </form>
-            {% endif %}
-
-            <hr >
-
-            <h3>Comments:</h3>
-            <div class="col-1">
-                {% with comments.count as total_comments %}
-                <strong class="text-secondary"><i class="far fa-comments"></i>
-                    {{ total_comments }}</strong>
-                {% endwith %}
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col card mb-4  mt-3 ">
-            <div class="card-body">
-                {% for comment in comments %}
-                <div class="comments" style="padding: 10px;">
-                    <p class="font-weight-bold">
-                        {{ comment.name }}
-                        <span class=" text-muted font-weight-normal">
-                            {{ comment.created_on }}
-                        </span> wrote:
-                    </p>
-                    {{ comment.body | linebreaks }}
+    <!-- Delete Recipe Modal and Link -->
+    <div class="modal fade" id="delete-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-body">
+                <h3 class="text-danger text-center">Delete recipe</h3>
+                <p>
+                    Are you sure you want to delete {{ recipe.name }} this recipe?
+                </p>
+                <div class="modal-footer d-flex justify-content-center">
+                    <!-- Delete Link Avtivates DeleteRecipe View -->
+                    <a class="btn btn-danger m-1" href="{% url 'delete_recipe' recipe.id %}" type="button"> Yes, Delete</a>
+                    <!-- Close Button -->
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">No, Return</button>
                 </div>
-                {% endfor %}
+            </div>
+        </div>  
+    </div>
+
+    <!-- Comment Section -->
+    <div class="containe-fluid">
+        <div class="row">
+            <div class="col">
+                <!-- Leave a comment Form -->
+                {% if user.is_authenticated %}
+                <form method="post" style="margin-top: 1.3em;">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-warning mt-1">Submit</button>
+                </form>
+                {% endif %}
+
+                <hr>
+                
+                <h3>Comments:</h3>
+                <div class="col-1">
+                    <!-- Icon displays comment number -->
+                    {% with comments.count as total_comments %}
+                    <strong class="text-secondary"><i class="far fa-comments"></i>
+                        {{ total_comments }}</strong>
+                    {% endwith %}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col card mb-4  mt-3 ">
+                <div class="card-body">
+                    <!-- Loop through comments to display them -->
+                    {% for comment in comments %}
+                    <div class="comments" style="padding: 10px;">
+                        <p class="font-weight-bold">
+                            {{ comment.name }}
+                            <span class=" text-muted font-weight-normal">
+                                {{ comment.created_on }}
+                            </span> wrote:
+                        </p>
+                        {{ comment.body | linebreaks }}
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
+
 </div>
+
+
 
 {% endblock content %}

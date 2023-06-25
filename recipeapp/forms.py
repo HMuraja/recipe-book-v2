@@ -5,9 +5,18 @@ from django_summernote.widgets import SummernoteWidget
 
 
 class CommentForm(forms.ModelForm):
+
     class Meta:
         model = Comment
         fields = ('body',)
+
+        labels = {
+            'body': ('Leave Comment:'),
+            }
+
+        widgets = {
+          'body': forms.Textarea(attrs={'rows': 3}),
+        }
 
 
 class ShareRecipeForm(forms.ModelForm):
