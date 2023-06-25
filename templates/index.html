@@ -29,22 +29,22 @@
             <div class="row">
                 {% for recipe in recipe_list %}
                 <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                <img class="card-img-top" src=" {{ recipe.featured_image.url }}">
-                            </div>
-                            <a href="{% url 'recipe_detail' recipe.slug %}" class="post-link">
-                                <div class="recipe-card-layout">
-                                    <h2 class="card-title mb-0">{{ recipe.name }}</h2>
-                                    <p class="text-muted h5 mb-0"><i class="far fa-heart "></i>
+                    <div class="card mb-4 card-hover">
+                        <a class="card-body post-link" href="{% url 'recipe_detail' recipe.slug %}">
+                            <div class="image-container position-relative">
+                                <div class="image-wrapper">
+                                    <img class="recipe-card-img" src=" {{ recipe.featured_image.url }}">
+                                    <p class="likes-overlay h5 mb-0 rounded-circle"><i class="far fa-heart "></i>
                                         {{ recipe.number_of_likes }}</p>
                                 </div>
-                                <hr class = "hr-margin"/>
-                                <p class="card-text text-muted h6 ">{{ recipe.region}}, {{ recipe.city}}</p>
-                                <p class="card-text ">{{ recipe.excerpt }}</p>
-                            </a>
-                        </div>
+                            </div>
+                            <div class="recipe-card-layout">
+                                <h3 class="card-title mb-0">{{ recipe.name }}</h3>
+                            </div>
+                            <hr class = "hr-margin"/>
+                            <p class="card-text text-muted h6 ">{{ recipe.region}}, {{ recipe.city}}</p>
+                            <p class="card-text ">{{ recipe.excerpt }}</p>
+                        </a>
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:5 %}
