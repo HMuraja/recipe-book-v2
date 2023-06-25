@@ -91,8 +91,7 @@ class ShareRecipe(View):
         if form.is_valid():
             unique_string = get_random_string(length=5)
             form.instance.author = request.user
-            form.instance.slug = slugify(
-                form.instance.name+" " + unique_string)
+            form.instance.slug = slugify(form.instance.name)
             checked_form = form.save(commit=False)
             checked_form.save()
             return render(

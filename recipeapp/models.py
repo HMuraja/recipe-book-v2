@@ -11,7 +11,7 @@ class Recipe(models.Model):
         ('Apulia', 'Apulia'),
         ('Basilicata', 'Basilicata'),
         ('Calabria', 'Calabria'),
-        ('Campania', 'Calabria'),
+        ('Campania', 'Campania'),
         ('Emilia-Romagna', 'Emilia-Romagna'),
         ('Friuli-Venezia Giulia', 'Friuli-Venezia Giulia'),
         ('Lazio', 'Lazio'),
@@ -45,9 +45,9 @@ class Recipe(models.Model):
             "image/upload/v1687522627/recipe-placeholder.jpg"
             )
         )
-    excerpt = models.TextField(max_length=80, blank=True)
+    excerpt = models.TextField(blank=True)
     prep_time = models.PositiveIntegerField()
-    serves = models.PositiveIntegerField()
+    serves = models.CharField(max_length=80, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now=True)
     description = models.TextField()
