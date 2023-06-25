@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+
+<div class="container card">
+    <div class="row">
+        <h2 class="text-center bg-success text-center text-light">
+            Edi a Recipe
+        </h2>
+        <p class="text-muted text-center">
+            Hello, {{ user.username }}! <br> Ready to edit your recipe?
+        </p>
+    </div>
+    
+    {% if failed%}
+    <!-- Failed submission notification -->
+    <div class="row">
+        <div class="col">
+            <p class="text-danger">
+               Recipe couldn't be shared!<br>
+               Please check the required fields and try submitting again.
+            </p>
+        </div>
+    </div>
+    {% endif %}
+    <!-- Crispy Form is shared -->
+    <div class="row">
+        <div class="col">
+            <form method="post" style="margin-top: 1.3em;" enctype="multipart/form-data">
+                {{ share_recipe_form | crispy }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-warning mt-1">Submit</button>
+            </form>
+    </div>
+</div>
+
+
+{% if posted is True %}
+<!-- Script activates a success modal -->
+<script>
+    $(document).ready(function() {
+        $('#feedback-modal').modal('show');
+    });
+</script>
+{% endif %}
+
+
+<!-- modal content if submisson is succesful -->
+
+<div class="modal fade" id="feedback-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-body">
+            <p>
+            You succesfully edited the recipe. 
+            </p>
+            <div class="modal-footer">
+                <a href= "{% url 'recipe' %}" type="button" class="btn btn-warning">View my edited Recipe!</a>
+                <a href="{% url 'home' %}" type="button" class="btn btn-warning">View All Recipes</a>
+            </div>
+        </div>
+    </div>  
+  </div>
+
+{% endblock content %}

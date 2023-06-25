@@ -110,3 +110,58 @@ class ShareRecipe(View):
                     'posted': False,
                 }
             )
+
+
+class EditRecipe(View):
+    model = Recipe
+    template_name = 'edit_recipe.html'
+
+    def get(self, request, pk, *args, **kwargs):
+        """
+        Get method to render template and form.
+        """
+
+        recipe = Recipe.objects.get(pk=pk)
+        form = ShareRecipeForm(instance=recipe)
+
+        return render(
+            request,
+            'edit_recipe.html',
+            {
+                'form': form,
+                'posted': False
+            }
+        )
+
+    def post(self, request, pk, *args, **kwargs):
+        """
+        Post method to submit recipe form and return template with variables.
+        """
+
+        recipe = Recipe.objects.get(pk=pk)
+        form = ShareRecipeForm(request.POST, request.FILES, instance=recipe)
+
+        if form.is_valid():
+            form.save()
+            form.instance.slug = slugify(form.instance.title)
+            recipe = form.save(commit=False)
+            recipe.save()
+
+            return render(
+                request,
+                self.template_name,
+                {
+                    'form': form,
+                    'posted': True
+                }
+            )
+        else:
+            return render(
+                request,
+                self.template_name,
+                {
+                    'form': form,
+                    'failed': True,
+                    'posted': False,
+                }
+            )
