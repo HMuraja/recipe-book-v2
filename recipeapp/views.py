@@ -116,7 +116,6 @@ class ShareRecipe(View):
 class EditRecipe(View):
     model = Recipe
     template_name = 'edit_recipe.html'
-    print("made it to View")
 
     def get(self, request, pk, *args, **kwargs):
         """
@@ -131,8 +130,9 @@ class EditRecipe(View):
             request,
             'edit_recipe.html',
             {
-                'form': form,
-                'posted': False
+                'share_recipe_form': form,
+                'posted': False,
+                'recipe': recipe,
             }
         )
 
@@ -146,7 +146,7 @@ class EditRecipe(View):
 
         if form.is_valid():
             form.save()
-            form.instance.slug = slugify(form.instance.title)
+            form.instance.slug = slugify(form.instance.name)
             recipe = form.save(commit=False)
             recipe.save()
 
@@ -154,7 +154,7 @@ class EditRecipe(View):
                 request,
                 self.template_name,
                 {
-                    'form': form,
+                    'share_recipe_form': form,
                     'posted': True,
                     'recipe': recipe,
                 }
@@ -164,7 +164,7 @@ class EditRecipe(View):
                 request,
                 self.template_name,
                 {
-                    'form': form,
+                    'share_recipe_form': form,
                     'failed': True,
                     'posted': False,
                 }

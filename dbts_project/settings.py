@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'cloudinary_storage',
     'django.contrib.staticfiles',
+    'django_cleanup.apps.CleanupConfig',
     'cloudinary',
     'django_summernote',
     'crispy_forms',

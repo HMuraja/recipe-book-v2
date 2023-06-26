@@ -47,7 +47,7 @@ class ShareRecipeForm(forms.ModelForm):
             'name': ('Recipe Name:'),
             'region': ('Select the Region:'),
             'city': ('Type the City:'),
-            'featured_image': ('Add an Image:'),
+            'featured_image': ('Add Image:'),
             'excerpt': ('Summary:'),
             'prep_time': ('Preparation Time (min):'),
             'serves': ('Serves:'),
