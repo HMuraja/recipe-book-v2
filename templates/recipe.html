@@ -11,8 +11,20 @@
         <div class="col-md-6 masthead-text d-flex flex-column align-items-center justify-content-center ">
             <h1 class="recipe-title text-center">{{ recipe.name }}</h1>
             <p>{{ recipe.region }}, {{ recipe.city }}</p>
-            <p>By {{ recipe.author }}</p>              
-            <p> <i class="far fa-heart"></i>
+            <p>By {{ recipe.author }}</p>
+            <p> 
+            {% if user.is_authenticated %}
+                <form class="d-inline likes-for-authenticated" action="{% url 'recipe_like' recipe.slug %}" method="POST">
+                    {% csrf_token %}
+                    {% if liked %}
+                    <button type="submit" name="recipe_id" value="{{recipe.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                    {% else %}
+                    <button type="submit" name="recipe_id" value="{{recipe.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                    {% endif %}
+                </form>
+                {% else %}              
+                <i class="far fa-heart"></i>
+            {% endif %}
                 {{recipe.number_of_likes}}
             </p>
         </div>
