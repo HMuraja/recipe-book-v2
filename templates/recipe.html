@@ -62,14 +62,27 @@
         <div class="col">
             <!-- Date is displayed here -->
             <p> Date: {{ recipe.created_on }}</p>
+        </div>
+    </div>
+
+    <div class="row g-3 light-grey pt-3">
+        <div class="col">
             <!-- Buttons for logged in users -->
             {% if user.is_authenticated  %}
+
             <!-- Edit button and link to the template -->
             <a class="btn btn-warning m-1" href="{% url 'edit_recipe' recipe.id %}" type="button"> Edit Recipe</a>
+            
             <!-- Delete Button -->
             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal">
                 Delete Recipe
               </button>
+
+            <!-- Notification for users who are not aurthors -->
+            {% if recipe.author != user %}
+            <p class="text-danger"> Only the author of this recipe can edit or delete the recipe</p>
+            {% endif %}
+            
             {% endif %}
         </div>
     </div>

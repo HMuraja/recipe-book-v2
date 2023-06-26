@@ -117,6 +117,13 @@ class EditRecipe(View):
     model = Recipe
     template_name = 'edit_recipe.html'
 
+    def dispatch(self, request, pk, *args, **kwargs):
+        recipe = Recipe.objects.get(pk=pk)
+        if recipe.author != request.user:
+            return HttpResponseRedirect(
+                reverse('recipe_detail', args=[recipe.slug]))
+        return super().dispatch(request, pk, *args, **kwargs)
+
     def get(self, request, pk, *args, **kwargs):
         """
         Get method to render template and form.
@@ -173,6 +180,13 @@ class EditRecipe(View):
 
 class DeleteRecipe(View):
     model = Recipe
+
+    def dispatch(self, request, pk, *args, **kwargs):
+        recipe = Recipe.objects.get(pk=pk)
+        if recipe.author != request.user:
+            return HttpResponseRedirect(
+                reverse('recipe_detail', args=[recipe.slug]))
+        return super().dispatch(request, pk, *args, **kwargs)
 
     def get(self, request, pk, *args, **kwargs):
         """
