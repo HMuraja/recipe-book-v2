@@ -3,7 +3,7 @@
 {% load i18n %}
 {% load account socialaccount %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% block head_title %}{% trans "Login" %}{% endblock %}
 
 {% block content %}
 <div class="container">
@@ -20,8 +20,6 @@
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        
-        <p><a class="button secondaryAction fw-bold link-danger" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a></p>
         <button class="primaryAction btn btn-danger" type="submit">{% trans "Sign In" %}</button>   
       </form>
 
