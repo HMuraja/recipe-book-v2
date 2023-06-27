@@ -2,7 +2,7 @@ from . import views
 from django.urls import path
 from django.contrib.auth.decorators import login_required
 
-
+# URL paths for connecting models and views
 urlpatterns = [
     path('', views.RecipeSelection.as_view(), name='home'),
     path(

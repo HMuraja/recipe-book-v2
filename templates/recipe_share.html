@@ -11,18 +11,8 @@
         <p class="text-muted text-center">
             Hello, {{ user.username }}! <br> Fill out the form to and share your recipe!
         </p>
-    </div>
-    
-    {% if recipe %}
-    <div class="row">
-        <div class="col">
-            <p class="text-danger">
-               Recipe couldn't be shared!<br>
-               The name you have chosen for the recipe already exist, please enter a new name!
-            </p>
-        </div>
-    </div>
-    {% endif %}
+    </div> 
+
     {% if failed%}
     <!-- Failed submission notification -->
     <div class="row">

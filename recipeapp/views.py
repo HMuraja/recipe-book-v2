@@ -10,6 +10,9 @@ from django.contrib import messages
 
 
 class RecipeSelection(generic.ListView):
+    """
+    View retrieves the available recipe instances for the index.html
+    """
     model = Recipe
     queryset = Recipe.objects.order_by("-created_on")
     template_name = "index.html"
@@ -17,6 +20,13 @@ class RecipeSelection(generic.ListView):
 
 
 class RecipeDetails(View):
+    """
+    Receives the request from html on get method
+    Retrieves data for the respective recipe based on the request information.
+    Returns a render of recipe details based on the data retrieved.
+    Post method validates
+    and submits the data from the COmmentForm to the database.
+    """
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects
@@ -71,6 +81,12 @@ class RecipeDetails(View):
 
 
 class ShareRecipe(View):
+    """
+    Class for sharing a new recipe.
+    Get method recives a request request for rendering
+    and renders the ShareRecipe form.
+    Post method validates and submits the form.
+    """
     form_type = ShareRecipeForm
     template_name = 'recipe_share.html'
     initial = {'key': 'value'}
@@ -88,7 +104,6 @@ class ShareRecipe(View):
 
     def post(self, request, *args, **kwargs):
         form = self.form_type(request.POST, request.FILES)
-        print("we got through")
 
         if form.is_valid():
             unique_string = get_random_string(length=5)
@@ -114,6 +129,12 @@ class ShareRecipe(View):
 
 
 class EditRecipe(View):
+    """
+     Class for editing existing recipe.
+    Get method recives a request request for rendering
+    and renders the ShareRecipe form.
+    Post method validates and submits the form.
+    """
     model = Recipe
     template_name = 'edit_recipe.html'
 
@@ -125,9 +146,6 @@ class EditRecipe(View):
         return super().dispatch(request, pk, *args, **kwargs)
 
     def get(self, request, pk, *args, **kwargs):
-        """
-        Get method to render template and form.
-        """
         print("made it to GET method")
 
         recipe = Recipe.objects.get(pk=pk)
@@ -144,10 +162,6 @@ class EditRecipe(View):
         )
 
     def post(self, request, pk, *args, **kwargs):
-        """
-        Post method to submit recipe form and return template with variables.
-        """
-
         recipe = Recipe.objects.get(pk=pk)
         form = ShareRecipeForm(request.POST, request.FILES, instance=recipe)
 
@@ -179,6 +193,11 @@ class EditRecipe(View):
 
 
 class DeleteRecipe(View):
+    """
+    Class for deleting the recipe.
+    Get request get's the respective recipe data
+    and deletes it.
+    """
     model = Recipe
 
     def dispatch(self, request, pk, *args, **kwargs):
@@ -189,9 +208,6 @@ class DeleteRecipe(View):
         return super().dispatch(request, pk, *args, **kwargs)
 
     def get(self, request, pk, *args, **kwargs):
-        """
-        Get method to render template and form.
-        """
         recipe = get_object_or_404(Recipe, pk=pk)
         recipe_name = recipe.name
         recipe.delete()
@@ -206,6 +222,11 @@ class DeleteRecipe(View):
 
 
 class PostLike(View):
+    """
+    Class for liking a recipe.
+    Post method gets the recipe data
+    and updates the likes data.
+    """
 
     def post(self, request, slug, *args, **kwargs):
         recipe = get_object_or_404(Recipe, slug=slug)

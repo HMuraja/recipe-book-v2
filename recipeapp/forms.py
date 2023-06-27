@@ -5,6 +5,9 @@ from django_summernote.widgets import SummernoteWidget
 
 
 class CommentForm(forms.ModelForm):
+    """
+    Class for generating comment form.
+    """
 
     class Meta:
         model = Comment
@@ -20,6 +23,9 @@ class CommentForm(forms.ModelForm):
 
 
 class ShareRecipeForm(forms.ModelForm):
+    """
+    Class for generating and editing recipe instances
+    """
 
     class Meta:
         model = Recipe

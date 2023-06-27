@@ -5,6 +5,10 @@ from django import forms
 
 
 class Recipe(models.Model):
+    """
+    Model for generating Recipe Instances
+    """
+    # Array of available regions for 'region' field
     REGIONS = (
         ('Abruzzo', 'Abruzzo'),
         ('Aosta valley', 'Aosta valley'),
@@ -29,7 +33,8 @@ class Recipe(models.Model):
         ('Unknown', 'Region Unknown'),
         ('None', 'No Specific Region'),
     )
-
+    
+    # Recipe Fields
     name = models.CharField(max_length=80)
     slug = models.SlugField(max_length=80, unique=True)
     region = models.CharField(
@@ -76,6 +81,10 @@ class Recipe(models.Model):
 
 
 class Comment(models.Model):
+    """
+    Class extending modles.Model class.
+    Generates a comment instance
+    """
     recipe = models.ForeignKey(
         Recipe, on_delete=models.CASCADE, related_name="comments")
     name = models.CharField(max_length=80)

@@ -1,23 +1,29 @@
 {% extends "base.html" %}{% block content %}
 
+
 <div class="container container-max-width">
     <div class="row ">
+        <!-- Welcoming statements -->
         {% if user.is_authenticated %}
+        <!-- Statement for logged in users -->
         <p class="text-muted text-center">
             Ready to share ypur love for traditional Italian cuisine
         </p>
         {% else %}
+        <!-- Statement for viewer -->
         <p class="text-muted text-center">
             Your community for learning and sharing traditions of Italian cuisine
         </p>        
         {% endif %}
     </div>
+    <!-- Recipes Selction/List -->
     <div class="row bg-success text-center m-1 text-light">
         <h2>Recipes</h2>
     </div>
     
     <div class="row">
         <div class="col">
+            <!-- Sharenrecipe Button only visible for the logged in users -->
             {% if user.is_authenticated %}
             <a class="btn btn-warning m-1 " href="{% url 'recipe_share' %}" type="button">
                 Share a Recipe</a>
@@ -27,6 +33,7 @@
     <div class="row">
         <div class="col-12 mt-3 left">
             <div class="row">
+            <!-- Loop of all the recipe instances that are displayed as cards -->
             {% for recipe in recipe_list %}
                 <div class="col-md-4">
                     <div class="card mb-4 card-hover">
@@ -47,6 +54,7 @@
                         </a>
                     </div>
                 </div>
+                <!-- Pagination after 6 recipe cards -->
                 {% if forloop.counter|divisibleby:3 %}
             </div>
             <div class="row">
@@ -55,6 +63,7 @@
             </div>
         </div>
     </div>
+    <!-- Pagination logic, taken from the 'I thik Therefore I Blog'CI Walkthrough project-->
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
