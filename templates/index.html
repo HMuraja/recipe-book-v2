@@ -33,7 +33,7 @@
                         <a class="card-body post-link" href="{% url 'recipe_detail' recipe.slug %}">
                             <div class="image-container position-relative">
                                 <div class="image-wrapper">
-                                    <img class="recipe-card-img" src=" {{ recipe.featured_image.url }}">
+                                    <img class="recipe-card-img" src=" {{ recipe.featured_image.url }}" alt="Recipes Feature Image">
                                     <p class="likes-overlay h5 mb-0 rounded-circle"><i class="far fa-heart "></i>
                                         {{ recipe.number_of_likes }}</p>
                                 </div>
@@ -41,7 +41,7 @@
                             <div class="recipe-card-layout">
                                 <h3 class="card-title mb-0">{{ recipe.name }}</h3>
                             </div>
-                            <hr class = "hr-margin"/>
+                            <hr class = "hr-margin">
                             <p class="card-text text-muted h6 ">{{ recipe.region}}, {{ recipe.city}}</p>
                             <p class="card-text ">{{ recipe.excerpt }}</p>
                         </a>

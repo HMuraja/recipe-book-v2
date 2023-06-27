@@ -5,8 +5,8 @@
 <!-- Recipe header -->
 <div class="container-fluid recipe-masthead-container">
     <div class="row g-0 flex-sm-row-reverse ">
-        <div class="d-md-block col-md-6 masthead-image img-fluid">
-            <img src=" {{ recipe.featured_image.url }}" width="100%">
+        <div class="d-md-block col-md-6 masthead-image-container">
+            <img src=" {{ recipe.featured_image.url }}" alt="Image of the recipe dish" class="masthead-image">
         </div>
         <div class="col-md-6 masthead-text d-flex flex-column align-items-center justify-content-center ">
             <h1 class="recipe-title text-center">{{ recipe.name }}</h1>
@@ -35,26 +35,26 @@
 <div class="container-fluid g-4 mt-5 container-max-width">
     <div class="row g-3 light-grey ">
         <div class="col mt-1">
-            <h2 clss="recipe-sub-headers">About the Recipe</h2>
-            <p clss="recipe-body">{{ recipe.description | safe }}</p>
+            <h2 class="recipe-sub-headers">About the Recipe</h2>
+            <p class="recipe-body">{{ recipe.description | safe }}</p>
         </div>
     </div> 
 
     <div class="row g-3 light-grey ">
         
         <div class="col-md-auto card recipe-ingerients">
-            <h2 clss="recipe-sub-headers">Ingredients</h2>
+            <h2 class="recipe-sub-headers">Ingredients</h2>
             <p>Serves: {{ recipe.serves }}</p>
             <p>Time: {{ recipe.prep_time }} mins</p> 
-            <p clss="recipe-body">{{ recipe.ingredients | safe }}</p>
+            <p class="recipe-body">{{ recipe.ingredients | safe }}</p>
         </div>
 
     </div>
 
     <div class="row g-3 light-grey ">
         <div class="col mt-1">
-            <h2 clss="recipe-sub-headers">Method</h2>
-            <p clss="recipe-body">{{ recipe.method | safe }}</p>
+            <h2 class="recipe-sub-headers">Method</h2>
+            <p class="recipe-body">{{ recipe.method | safe }}</p>
         </div>
     </div>
 
@@ -71,7 +71,7 @@
             {% if user.is_authenticated  %}
 
             <!-- Edit button and link to the template -->
-            <a class="btn btn-warning m-1" href="{% url 'edit_recipe' recipe.id %}" type="button"> Edit Recipe</a>
+            <a class="btn btn-warning m-1" href="{% url 'edit_recipe' recipe.id %}"> Edit Recipe</a>
             
             <!-- Delete Button -->
             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal">
@@ -91,13 +91,13 @@
     <div class="modal fade" id="delete-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content modal-body">
-                <h3 class="text-danger text-center">Delete recipe</h3>
+                <h3 class="text-danger text-center" id="staticBackdropLabel">Delete recipe</h3>
                 <p class="text-center">
                     Are you sure you want to delete {{ recipe.name }} this recipe?
                 </p>
                 <div class="modal-footer d-flex justify-content-center">
                     <!-- Delete Link Activates DeleteRecipe View -->
-                    <a class="btn btn-danger m-1" href="{% url 'delete_recipe' recipe.id %}" type="button"> Yes, Delete</a>
+                    <a class="btn btn-danger m-1" href="{% url 'delete_recipe' recipe.id %}"> Yes, Delete</a>
                     <!-- Close Button -->
                     <button type="button" class="btn btn-warning" data-bs-dismiss="modal">No, Return</button>
                 </div>
@@ -136,13 +136,13 @@
                     <!-- Loop through comments to display them -->
                     {% for comment in comments %}
                     <div class="comments" style="padding: 10px;">
-                        <p class="font-weight-bold">
-                            {{ comment.name }}
-                            <span class=" text-muted font-weight-normal">
-                                {{ comment.created_on }}
-                            </span> wrote:
-                        </p>
                         {{ comment.body | linebreaks }}
+                        <p class="font-weight-bold">
+                            <strong> - {{ comment.name }}</strong>
+                            <span class=" text-muted font-weight-normal">
+                                on {{ comment.created_on }}
+                            </span>
+                        </p>
                     </div>
                     {% endfor %}
                 </div>
