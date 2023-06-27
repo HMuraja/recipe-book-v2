@@ -68,11 +68,16 @@ Issues were added on the Github Projects Boards, a builtin management tool from 
 ### Further tests
 ### Solved bugs
 ### Known bugs
-### Deployment
-# First Deployment
+
+## Deployment
+### First Deployment
 The project was deployed in the beginning of the development. Following steps were taken with the first deployment:
 - Django and supporting libraries were installed.
-- File for the development environment, env.py, was created  and added to the .gitignore file.
+- File for the development environment, env.py, was created  and added to the .gitignore file. The env.py should include the following:
+    - Add 'import os' on the top of the file.
+    - os.environ["DATABASE_URL"] = "[your database URL goes here]"
+    - os.environ["SECRET_KEY"] = "[the secret key from that Django generates on the setting.py should be added here and reference to to it added to sertting.py]"
+    - os.environ["CLOUDINARY_URL"] = "[add cloudinary URL here ]"
 - Cloudinary storage was set up for the templates, static files and media files.
 - Procfile was created to declare gunicorn as the webserver.
 - A Heroku app was created and location set to EU.
@@ -83,7 +88,16 @@ The project was deployed in the beginning of the development. Following steps we
     - PORT:                     8000
     - SECRET_KEY:               [secret key would go here]
 - Within the 'Deploy'- tab 'Github' was selected  as the Deployemnt method and app was connected to the Github repository and Automatic deployes were enabled.
-- 
+### Second Deployment
+Seond Deployement was done in the end of the project, once all changes had been saved to GitHub.
+- Start by setting 'DEBUG = False' on on setting.py of you project file.
+- Then add 'X_FRAME_OPTIONS = 'SAMEORIGIN'' on the settings.py, summernote won't work without this setting in Heroku.
+- Commit all changes now, this should be the final commit before deployment. 
+- In Heroku go to your project and then to settings and click 'Reveal Config Vars', remove disable  
+collect static environment variable.
+- Go to Activity tab and see if the project has deployed succesfully if not, click th 'View Build Log" and see what is the problem. 
+- After fixing the issue you can go to Deploy tab adnd Manually Deploye from barnch, if it fails a again see the build log and repeatthe process until project has deployed succesfully.
+- Click on 'Open App' and admire your work.
 
 ## Credits
 
