@@ -92,11 +92,11 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content modal-body">
                 <h3 class="text-danger text-center">Delete recipe</h3>
-                <p>
+                <p class="text-center">
                     Are you sure you want to delete {{ recipe.name }} this recipe?
                 </p>
                 <div class="modal-footer d-flex justify-content-center">
-                    <!-- Delete Link Avtivates DeleteRecipe View -->
+                    <!-- Delete Link Activates DeleteRecipe View -->
                     <a class="btn btn-danger m-1" href="{% url 'delete_recipe' recipe.id %}" type="button"> Yes, Delete</a>
                     <!-- Close Button -->
                     <button type="button" class="btn btn-warning" data-bs-dismiss="modal">No, Return</button>

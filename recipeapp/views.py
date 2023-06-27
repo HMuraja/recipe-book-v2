@@ -195,9 +195,14 @@ class DeleteRecipe(View):
         recipe = get_object_or_404(Recipe, pk=pk)
         recipe_name = recipe.name
         recipe.delete()
-        messages.success(request, f'{recipe_name} recipe deleted')
 
-        return redirect(reverse('home'))
+        return render(
+            request,
+            'delete_recipe.html',
+            {
+                'recipe_name': recipe_name,
+            }
+        )
 
 
 class PostLike(View):
