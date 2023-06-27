@@ -33,7 +33,7 @@ class Recipe(models.Model):
         ('Unknown', 'Region Unknown'),
         ('None', 'No Specific Region'),
     )
-    
+
     # Recipe Fields
     name = models.CharField(max_length=80)
     slug = models.SlugField(max_length=80, unique=True)
