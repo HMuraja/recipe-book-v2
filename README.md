@@ -60,10 +60,13 @@ Issues were added on the Github Projects Boards, a builtin management tool from 
 ### Frameworks and Libraries
 ### Software and Web Applications Used
 
-## Tests
-### Browser tests
-### Responsiveness
-### Validators
+# Tests
+## Browser tests
+## Responsiveness
+## Validator Tests
+### W3C
+Site HTML was teststed using the [W3C HTML Markup Validation Service](https://validator.w3.org/). After the first run the validator showed warning about missing language attribute on the html tag. After language attribute was added, the site passed through the validator without any errors or warnings.
+
 ### Tests on user stories
 ### Further tests
 ### Solved bugs
