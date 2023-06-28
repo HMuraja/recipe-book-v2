@@ -5,6 +5,8 @@ Your community for learning and sharing traditions of Italian cuisine
 
 Don't Break the Spaghetti is a recipe book of traditional italian recipes. Users can register for the site in order to post a recipe, like or comment on other recipes. Site is for anyone interested of traditional Italian cuisine and acts as a community allowing users to interact one another.
 
+[View the active site here](https://dbts-recipe-app-f9995cb6b9df.herokuapp.com/)
+
 ## Design Process
 
 ### Problem Statement
@@ -64,9 +66,27 @@ Issues were added on the Github Projects Boards, a builtin management tool from 
 ## Browser tests
 ## Responsiveness
 ## Validator Tests
+Validators services where used to validate sites HTML and python code. JavaScript was not used during this project .
 ### W3C
 Site HTML was teststed using the [W3C HTML Markup Validation Service](https://validator.w3.org/). After the first run the validator showed warning about missing language attribute on the html tag. After language attribute was added, the site passed through the validator without any errors or warnings.
 
+Initial validation result.![initial html validation test](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/html-validation.png)
+
+Final validation result.![final html validation test](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/final-html-validation.png)
+### CI Python Linter
+All python files in the *recipeapp*-folder were validated via the[CI Python Linter](https://pep8ci.herokuapp.com/). All files passed the validation without errors.
+
+Validation results from admin.py:![admin.py](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/ci-python-linter-admin-py.png)
+
+Validation results from apps.py:![apps.py:](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/ci-python-linter-apps-py.png)
+
+Validation results from forms.py:![forms.py:](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/ci-python-linter-forms-py.png)
+
+Validation results from models.py:![models.py:](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/ci-python-linter-models-py.png)
+
+Validation results from urls.py:![urls.py:](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/ci-python-linter-urls-py.png)
+
+Validation results from views.py:![views.py:](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/ci-python-linter-views-py.png)
 ### Tests on user stories
 ### Further tests
 ### Solved bugs
