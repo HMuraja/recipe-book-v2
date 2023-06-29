@@ -160,7 +160,7 @@ On Medium sized screens and smaller the menu collapses into a dropdown menu.
 ![dropdown menu after](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/dropdown-menu-after.png)
  
 ## Recipe Page
-One the home page, when users hover mouse over the recipe card, a shadow is displayed creating a illusion of lifted card and the text highligthed changes color.
+On the home page, hovering mouse over the recipe card will cause a shadow behind the recipe card and change in the text color.
 
 ![image of selected recipe card and animation](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/hover-over-recipe-card.png)
 
@@ -168,12 +168,11 @@ Clicking anywhere on the image, takes the user to a page with the recipes detail
 
 ![recipe header](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/recipe-details.png)
 
-After that you have the description of the recipe, this section explains briefly the background of the recipe, below this section you have the servings, cooking time, ingredients, methods and date of creation.
+Below the header you have the body of the recipe, ith most of the information. About section acts as a field for users explain more about the recipe. Ingredients and method are the sections where the more practical information is summarized. Inside the Ingredients there are also the servings and cooking time.
 
 ![Recipe body 2](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/recipe-details-2.png)
 
-
-On the bottom of the page there is the comment section. If user isn't logged in they may only view the the recipe deails and any comments that other users have left.
+On the bottom of the body the date of creation is detailed and the ciomment section starts. If user isn't logged in they may only view the the recipe deails and any comments that other users have left.
 
 ![image of selected recipe card and animation](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/recipe-comments.png)
 
@@ -181,13 +180,15 @@ Any users logged in to the recipe page can view the recipe details and comments,
 
 ![Edit and Delete button and submit form](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/edit-delete-comment-my-recipe.png)
 
-These buttons can be used to edit the recipe, but if you are logged in as a different person than the author is, there will be an error message above this recipe stating that you won't be able to edit this recipe unless you are the author, if attempting to edit the recipe, will redirect the user back to the recipe page.
+These buttons can be used to edit the recipe, but if you aren't logged in as the author, there will be an error message above this recipe stating that only the author of this recipe can edit or delete the recipe. If attempring edit the recipe as as non-author, user will redirected back to the recipe page.
 
 ![Edit and Delete error](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/disabled-editing-buttons.png)
 
 ## Comment
 
-If the user wishes to leave acomment, they must login first and click on the recipe they want to view. on the bottom of the page there is a 'leave a comment'-form that the logged in user can leave. User has to only add the text they wish to post and press submit, if the submission is succesful the the recip page will refresh and the comment will appear on the top of the comment section. Each comment will have the username and time and date the comment was left on it. After posting a comment, the ser can't unfortunately delete or edit the comment any further, but they must contact the Admin in order to do this. 
+If the user wishes to leave a comment, they must login first and click on the recipe they want to view. On the bottom of the page there is a 'Leave a comment'-form that the logged in user can fill. User has to add only the text they wish to post and press submit, if the submission is succesful the the recip page will refresh and the comment will appear on the top of the comment section. 
+
+Each comment will have the commentors username, time and date of tghe comment added automatically. After posting a comment, the user can't unfortunately delete or edit the comment any further, but they must contact the Admin in order to do this. 
 
 ![image of selected recipe card and animation](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/edit-delete-comment-my-recipe.png)
 
