@@ -142,45 +142,54 @@ All together 5 user stories weren't implemented, you may see them on the project
 # Features
 
 ## Landing Page
-The home page or landing page for the site displays all the posted recipes as a list together with a navigation menu. Page can diplay 6 recipes at a time and a "next-button" on the bottom can be used to move between the pages. Each recipe card displays an image of the recipe, or a placeholder image, recipe name, region and city and a summary of the recipe. 
+The home page or landing displays all the shared recipes as recipe cards. Page can diplay 6 recipes at a time and a "next-button" on the bottom can be used to move between the pages. Each recipe card displays an image of the recipe, or a placeholder image, recipe name, region and city and a summary of the recipe. In the upper corner of the image, the likes are displayed.
 
 ![Landing page](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/landing-page.png)
 
 ![Next button below recipe cards](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/footer-next-button.png)
 
 ## Header/Navigation Menu
- The navigation menu and the title are placed on the header of the page and are the same for every page on the site. The navigation menu has links to home, login and signup pages. The title "Don't Break The Spagetthi" is right below the navigation menu and also acts as a link to the home page.
-![Navigation menu](hhttps://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/navigation-menu.png)
+The navigation menu and the title are placed on the header of the page and are the same for every page on the site. The navigation menu items are links to home, login and signup pages. The title "Don't Break The Spagetthi" is right below the navigation menu and also acts as a link to the home page.
+ 
+![Navigation menu](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/navigation-menu.png)
 
-On Medium sized screen the menu collapses into a dropdown menu. 
-![dropdown menu before](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/navigation/dropdown-menu-before.png)
-![dropdown menu after](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/navigation/dropdown-menu-after.png)
+On Medium sized screens and smaller the menu collapses into a dropdown menu.
+
+![dropdown menu before](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/dropdown-menu-before.png)
+
+![dropdown menu after](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/dropdown-menu-after.png)
  
 ## Recipe Page
-One the home page, when users hover mouse over the recipe card, a shadow is displayed creating a illusion of lifted card and the text highligthed changes color. 
-![image of selected recipe card and animation](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/navigation/hover-over-recipe-card.png)
+One the home page, when users hover mouse over the recipe card, a shadow is displayed creating a illusion of lifted card and the text highligthed changes color.
+
+![image of selected recipe card and animation](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/hover-over-recipe-card.png)
 
 Clicking anywhere on the image, takes the user to a page with the recipes details. This page can be divided into three sections on the top there is the image, name, author name, region and city of the recipe and the number of likes.
-![recipe header](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/recipe-detail.png)
+
+![recipe header](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/recipe-details.png)
 
 After that you have the description of the recipe, this section explains briefly the background of the recipe, below this section you have the servings, cooking time, ingredients, methods and date of creation.
-![Recipe body 2](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/recipe-details2.png)
+
+![Recipe body 2](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/recipe-details-2.png)
 
 
-On the bottom of the page there is the comment section. If user isn't logged in they may only view the the recipe deails and any comments that other users have left. 
-![image of selected recipe card and animation](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/navigation/recipe-comment.png)
+On the bottom of the page there is the comment section. If user isn't logged in they may only view the the recipe deails and any comments that other users have left.
 
-Any users logged in to the recipe page can view the recipe details and comments, but in addition there are edit and delete recipe and a 'leave acomment'-form at the bottom. 
+![image of selected recipe card and animation](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/recipe-comments.png)
+
+Any users logged in to the recipe page can view the recipe details and comments, but in addition there are edit and delete recipe and a 'leave acomment'-form at the bottom.
+
 ![Edit and Delete button and submit form](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/edit-delete-comment-my-recipe.png)
 
-These buttons can be used to edit the recipe, but if you are logged in as a different person than the author is, there will be an error message above this recipe stating that you won't be able to edit this recipe unless you are the author, if attempting to edit the recipe, will redirect the user back to the recipe page. 
-![Edit and Delete error](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/edit-delete-comment-my-recipe.png)
+These buttons can be used to edit the recipe, but if you are logged in as a different person than the author is, there will be an error message above this recipe stating that you won't be able to edit this recipe unless you are the author, if attempting to edit the recipe, will redirect the user back to the recipe page.
+
+![Edit and Delete error](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/disabled-editing-buttons.png)
 
 ## Comment
 
 If the user wishes to leave acomment, they must login first and click on the recipe they want to view. on the bottom of the page there is a 'leave a comment'-form that the logged in user can leave. User has to only add the text they wish to post and press submit, if the submission is succesful the the recip page will refresh and the comment will appear on the top of the comment section. Each comment will have the username and time and date the comment was left on it. After posting a comment, the ser can't unfortunately delete or edit the comment any further, but they must contact the Admin in order to do this. 
 
-![image of selected recipe card and animation](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/navigation/recipe-comment.png)
+![image of selected recipe card and animation](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/edit-delete-comment-my-recipe.png)
 
 ## Like
 
@@ -188,22 +197,7 @@ If the user wants to like a recipe they have to log in and navigate to the recip
 
 ![Like before](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/liek%20-before.png)
 
-![Like after](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/liek%20-after.png)
-
-## Signup
-
-If the user wan't to carry out any other functionalities on the site other than viewing data, they must create a account to do that. They can do it by clicking on the signup button on the navigation menu. This opens a signup form that the new user must fill. 
-![Like after](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/signup-page.png)
-
-They must add username and a password and a password confirmation. Email can be added, but is not required for creating a user account. Once all information is added, user must only press submit.
-
-If the form is not succesfully validated the form will display an error. The error message will instruct the user to update the fiedl with the error and then they can submit the form again.
-
-If succseful a new user instance will be created and their information will be saved onto the database. The user will be redirected to the frontpage and the navigation menu will display on a green background "Logged in as >username<", also instead of have menu items *Sign Up* or *Login* they will have *Logout* and *Create Recipe* instead. In addtion a yellow "Share Recipe"-button will display above the recipe cards.
-
-![Like before](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/liek%20-before.png)
-
-
+![Like after](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/like-after.png)
 
 ## Login
 
@@ -217,6 +211,17 @@ Once the form is succesfully submitted the user is logged in and they can view t
 
 ![login succesful display](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/landing-page-after-login.png)
 
+## Signup
+
+If the user wan't to carry out any other functionalities on the site other than viewing data, they must create a account to do that. They can do it by clicking on the signup button on the navigation menu. This opens a signup form that the new user must fill. 
+![Like after](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/signup-page.png)
+
+They must add username and a password and a password confirmation. Email can be added, but is not required for creating a user account. Once all information is added, user must only press submit.
+
+If the form is not succesfully validated the form will display an error. The error message will instruct the user to update the fiedl with the error and then they can submit the form again.
+
+If succseful a new user instance will be created and their information will be saved onto the database. The user will be redirected to the frontpage and the navigation menu will display on a green background "Logged in as >username<", also instead of have menu items *Sign Up* or *Login* they will have *Logout* and *Create Recipe* instead. In addtion a yellow "Share Recipe"-button will display above the recipe cards.
+
 ## Logout
 
 When the user wishes to logout from their account they must click on the *Logout* button on the navigation menu. A new site will upload and display a confrimation message if the user wants to logout from the account.
@@ -228,30 +233,35 @@ If the user confirms yes they will be logged out and if they state 'no' the user
 
 If user wants to create a recipe they must click on the yellow button above then recipe cards or the navigation link stating *Share Recipe*.
 
-![image of selected recipe card and animation](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/navigation/new-recipe-placeholder.png)
+![image of selected recipe card and animation](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/new-recipe-placeholder.png)
 
 Clicking the link or the button should open the page with the "Share Recipe"-form. All the required fields, name, region, preparation time, description, ingredients and method, are marked with a '*', other fields are optional. If the user won't select an image it will be replaced with a placeholder image.
-![Share recipe form top](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/navigation/share-recipe-1.png)
-![Share recipe form bottom](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/navigation/share-recipe-2.png) 
+
+![Share recipe form top](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/share-recipe-1.png)
+![Share recipe form bottom](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/share-recipe-2.png) 
 
 The region for the recipe can only be selected from the ones listed on the dropdown menu, also unknown and none are an option. It isn't possible to leave the field empty as it has been preselcted to be none.
-![Share recipe form bottom](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/navigation/select-a-region.png) 
+
+![Share recipe form bottom](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/select-a-region.png) 
 
 When the user submits the form, a validation will occur, if the required field have not been filled the form wont't be submitted and the first empty required field is highlighted. 
 
 A succesful submission will bring up a modul informing user of the succesful submission and request them to choose if they wish to return to the recipe views or to share a new recipe. The new recipe will be added to the database and showed on the home page as the first recipe card.
-![Share recipe form bottom](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/navigation/succesful-submission.png) 
+
+![Share recipe form bottom](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/succesful-submission.png) 
 
 ## Edit Recipe
 
 Only a logged in user and the author of the recipe can edit it. They have to click on the recipe they want to edit and then got to the bottom of the page where two buttons are displayed *Edit* and *Delete*. If the user is not the author they can still see the buttons but there will be red message above them stating "Only the author of this recipe can edit/delete the recipe". Clicking the buttons as non-author will lead only the recipe details page to be relaoded.
 
-Once the author clicks on the edit recipe button a edit recipe form will pop up. This form is the same as the 'Create Recipe'-form, the only difference is that the image field has an option to 'clear' the image available. 
-![edit recipe form](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/edit-recipe.png)
+Once the author clicks on the edit recipe button a edit recipe form will pop up. This form is the same as the 'Create Recipe'-form, the only difference is that the image field has an option to 'clear' the image available.
+
+![edit recipe form](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/edit-recipe-form.png)
 
 This has the same required field and validation a the create recipe so if any of the required fields is unfilled or incorrectly filled the form won't submit and highlight the first issue on the form.
 
 If the the edited form is succesfully submitted a message will pop-up stating that the recipe was succesfully edited. Then the user can choose to return to the recipe they just updated or they may return to the home page to view all recipes.
+
 ![edit recipe succesful](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/Screenshot%202023-06-28%20152650.png)
 
 ## Delete Recipe
