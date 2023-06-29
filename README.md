@@ -206,9 +206,7 @@ If the user has already signed up and are logged out from their account they can
 
 ![Edit and Delete button and submit form](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/login.png)
 
- User needs to enter username and their password and click submit. The login form will be validated and an error message will display if the login isn't succesful.
- 
-![login succesful display](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/landing-page-after-login.png)
+User needs to enter username and their password and click submit. The login form will be validated and an error message will display if the login isn't succesful.
 
 Once the form is succesfully submitted the user is logged in and they can view the green "Logged in as >username<" tag on the navigation menu. Also, the navigation menu won't have items *Sign Up* or *Login* instead there are *Logout* and *Create Recipe* instead. In addtion a yellow "Share Recipe"-button will display above the recipe cards.
 
@@ -586,7 +584,7 @@ collect static environment variable.
 - Click on 'Open App' and admire your work.
 
 # Credits
-- All code has been written by the author.
+Following resources were used to help build this project:
 - SVG icons were obtained from [Font Awesome](https://fontawesome.com/)
 - Source for recipes can be found from [vagrantsofttheworl.com](https://vagrantsoftheworld.com/traditional-italian-recipes-by-region/) and [tasteatlas](https://www.tasteatlas.com/amatriciana/recipe)
 - Images are from [Pexels](https://www.pexels.com/), [Unsplash](https://unsplash.com/), [vagrantsofttheworl.com](https://vagrantsoftheworld.com/traditional-italian-recipes-by-region/) and [tasteatlas](https://www.tasteatlas.com/amatriciana/recipe).
