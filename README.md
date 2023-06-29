@@ -144,13 +144,13 @@ All together 5 user stories weren't implemented, you may see them on the project
 ## Landing Page
 The home page or landing page for the site displays all the posted recipes as a list together with a navigation menu. Page can diplay 6 recipes at a time and a "next-button" on the bottom can be used to move between the pages. Each recipe card displays an image of the recipe, or a placeholder image, recipe name, region and city and a summary of the recipe. 
 
-[](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/landing-page.png)
+![Landing page](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/landing-page.png)
 
-![next button below recipe cards](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/footer-next-button.png)
+![Next button below recipe cards](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/footer-next-button.png)
 
 ## Header/Navigation Menu
  The navigation menu and the title are placed on the header of the page and are the same for every page on the site. The navigation menu has links to home, login and signup pages. The title "Don't Break The Spagetthi" is right below the navigation menu and also acts as a link to the home page.
-![navigation menu](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/navigation/navigation-menu.png)
+![Navigation menu](hhttps://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/navigation-menu.png)
 
 On Medium sized screen the menu collapses into a dropdown menu. 
 ![dropdown menu before](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/navigation/dropdown-menu-before.png)
