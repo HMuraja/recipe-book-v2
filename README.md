@@ -180,13 +180,13 @@ Any users logged in to the recipe page can view the recipe details and comments,
 
 ![Edit and Delete button and submit form](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/edit-delete-comment-my-recipe.png)
 
-These buttons can be used to edit the recipe, but if you aren't logged in as the author, there will be an error message above this recipe stating that only the author of this recipe can edit or delete the recipe. If attempring edit the recipe as as non-author, user will redirected back to the recipe page.
+These buttons can be used to edit the recipe, but if you aren't logged in as the author, there will be an error message below this recipe stating that only the author of this recipe can edit or delete the recipe. If user attempts to edit the recipe as a non-author, user will redirected back to the recipe page.
 
 ![Edit and Delete error](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/disabled-editing-buttons.png)
 
 ## Comment
 
-If the user wishes to leave a comment, they must login first and click on the recipe they want to view. On the bottom of the page there is a 'Leave a comment'-form that the logged in user can fill. User has to add only the text they wish to post and press submit, if the submission is succesful the the recip page will refresh and the comment will appear on the top of the comment section. 
+If the user wishes to leave a comment, they must login first and click on the recipe they want to view. On the bottom of the page there is a 'Leave comment'-form that the logged in user can fill. User has to add only the text they wish to post and press submit, if the submission is succesful the the recipe page will refresh and the comment will appear on the top of the comment section. 
 
 Each comment will have the commentors username, time and date of tghe comment added automatically. After posting a comment, the user can't unfortunately delete or edit the comment any further, but they must contact the Admin in order to do this. 
 
@@ -194,7 +194,7 @@ Each comment will have the commentors username, time and date of tghe comment ad
 
 ## Like
 
-If the user wants to like a recipe they have to log in and navigate to the recipe they like. On the recipe they must click on the heart icon, in order to like it or unlike it. Tghe page will refresh and the number of likes will be updated and the heart icon will change depending on if the user liked (solid colored heart icon) or unliked (outlined icon). 
+If the user wants to like a recipe they have to log in and navigate to the recipe they like. On the recipe they must click on the heart icon, in order to like it or unlike it. The page will refresh and the number of likes will be updated and the heart icon will change depending on if the user liked (solid colored heart icon) or unliked (outlined icon). 
 
 ![Like before](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/liek%20-before.png)
 
@@ -203,9 +203,11 @@ If the user wants to like a recipe they have to log in and navigate to the recip
 ## Login
 
 If the user has already signed up and are logged out from their account they can press *Login* button on the navigation menu and a login window will open up.
+
 ![Edit and Delete button and submit form](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/login.png)
 
- User needs to enter username and their password and click submit. The login form will be validated and an error message will display if the login isn't succesful. 
+ User needs to enter username and their password and click submit. The login form will be validated and an error message will display if the login isn't succesful.
+ 
 ![login succesful display](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/landing-page-after-login.png)
 
 Once the form is succesfully submitted the user is logged in and they can view the green "Logged in as >username<" tag on the navigation menu. Also, the navigation menu won't have items *Sign Up* or *Login* instead there are *Logout* and *Create Recipe* instead. In addtion a yellow "Share Recipe"-button will display above the recipe cards.
@@ -214,7 +216,8 @@ Once the form is succesfully submitted the user is logged in and they can view t
 
 ## Signup
 
-If the user wan't to carry out any other functionalities on the site other than viewing data, they must create a account to do that. They can do it by clicking on the signup button on the navigation menu. This opens a signup form that the new user must fill. 
+If the user wan't to carry out any other functionalities on the site other than viewing data, they must create a account to do that. They can do it by clicking on the signup button on the navigation menu. This opens a signup form that the new user must fill.
+
 ![Like after](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/signup-page.png)
 
 They must add username and a password and a password confirmation. Email can be added, but is not required for creating a user account. Once all information is added, user must only press submit.
@@ -226,6 +229,7 @@ If succseful a new user instance will be created and their information will be s
 ## Logout
 
 When the user wishes to logout from their account they must click on the *Logout* button on the navigation menu. A new site will upload and display a confrimation message if the user wants to logout from the account.
+
 ![Logout confirmation](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/logout.png)
 
 If the user confirms yes they will be logged out and if they state 'no' the user will be redirected back to the home page with a green green "Logged in as >username<" tag at the navigation menu and the *Share Recipe*-button. If the user logs out the view will miss the button to share recipes and navigation no longer states that the user is logged in. 
@@ -270,10 +274,26 @@ If the the edited form is succesfully submitted a message will pop-up stating th
 Only a logged in user and the author of the recipe can edit it. They have to click on the recipe they want to edit and then got to the bottom of the page where two buttons are displayed *Edit* and *Delete*. If the user is not the author they can still see the buttons but there will be red message above them stating "Only the author of this recipe can edit/delete the recipe". Clicking the buttons as non-author will lead only the recipe details page to be relaoded.
 
 Once the author clicks on delete recipe button, a modal pops up requesting author to confirm if they wish to delete the recipe or not. 
+
 ![Deletion Confrimation](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/confirm-deletion.png)
 
 If they answer now thye will be redirected to the recipe page, but if they select yes, they will be lead to a page stating that the selected recipe was succesfully deleted and a button that they can press to return to home page.
+
 ![Deletion Succesful page](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/deletion-succesful.png)
+
+## Admin Comment, User and Recipe
+
+Anyone with admin right can login to the admin site by extending the url with "/admin". 
+
+![Navigation to the admin panel](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/admin-url.png)
+
+A login page will open. Admin must enter admin username and password succesfully to login.
+
+![Admin Login](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/admin-login.png)
+
+A admin panel site will open, with the overview. Here admin can create, update and delete (CRUD) User, Comment and Recipe data if needed. Admin Just needs to click on one the datagroup they want to manage in order to access the CRUD functionalities. 
+
+![Admin Panel](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/admin-panel.png) 
 
 ## Features to be implemented in the future
 All together 5 features weren't installed in the end. These are deatailed in the user stories section and acceptance crieteria and tasks can be seen on the project board of this repositiory.
