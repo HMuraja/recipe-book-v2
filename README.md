@@ -1,12 +1,10 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
 # Don't Break The Spaghetti
-![Am I responsive view of the site](/workspace/p4-recipe-book/readme/images/p4-am-i-responsive.png)
 Your community for learning and sharing traditions of Italian cuisine
 
 Don't Break the Spaghetti is a recipe book of traditional italian recipes. Users can register for the site in order to post a recipe, like or comment on other recipes. Site is for anyone interested of traditional Italian cuisine and acts as a community allowing users to interact one another.
 
 [View the active site here](https://dbts-recipe-app-f9995cb6b9df.herokuapp.com/)
+![Am I responsive view of the site](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/p4-am-i-responsive.png)
 
 ## Project Goal
 ### Problem Statement
@@ -28,17 +26,15 @@ I am **a user** trying to **find an application where I can share my interest fo
 ## Wireframes
 A wireframe for the home page was made using powerpoint.
 
-The design for the fron page needed to display multiple recipe cards, header with navigation menu on top, a footer with social media links and a button to share recipes(if logged in). This original wireframe incuded a search and filter tab above the recipes but it was not implemented. 
-![Wireframe for the fron page](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images//p4-dbts-wireframe2.png)
+The design for the fron page needed to display multiple recipe cards, header with navigation menu on top, a footer with social media links and a button to share recipes(if logged in). This original wireframe incuded a search and filter tab above the recipes but it was not implemented. Each page of the site should have the same header and footer for each page. Mobile version design should have a dropdown icon for the navigation links.
+![Wireframe for the fron page](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/p4-dbts-wireframe2.png)
 
 
 The design for the recipe should have dedicated areas for the image, summary(green section), description, ingerdients and method. Comments should be stacked under the recipe. The layout in the final product variated slightly, where the description, ingredients and method ended up being under one another. The button for editing and deleting the recipe ended up being below all the recipe content with the date of creation.
-![Wireframe for the fron page](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images//p4-dbts-wireframe1.png)
+![Wireframe for the fron page](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/p4-dbts-wireframe1.png)
 
 The page for creating and editing was designed very roughly, with the decision that the form should fill the whole page for simplicity.
 ![Wireframe for the fron page](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images//p4-dbts-wireframe5.png)
-
-Plan was to have the same header and footer for each page. This solution carried ion for each page. Mobile version design had dropdown icon for the navigation links-
 
 ## Color Scheme
 
@@ -69,65 +65,79 @@ User Stories were made using the Github _Issues_ feature. Each issue equated a U
 
 Issues were added on the Github Projects Boards, a builtin management tool from GitHub, as tasks. The implementation of the features was tracked by moving the tasks on each of the boards column. Three columns were named: Todo, InProgress and Done.
 
-### USer Stories
+### User Stories
 All together 15 user stories were drafted and Acceptance Criteria together with Tasks were created. 
 
-IMPLEMENTED USER STORIES
+**IMPLEMENTED USER STORIES**
 
 Following 10 user stories were implemented during the development. You can see them on the done column of this repository's project board.
 
-USER STORY: Like a recipe *- Label: Should-Have*
-As an **user** I can **like or unlike a recipe** so that **I can promote recipes I like**
+- USER STORY: Like a recipe *- Label: Should-Have*
 
-USER STORY: Social Media Link *- Label: Could-Have*
-As an **user/site viewer** I can **access site creators social media profiles** so that **I can find out more about the site creator or contact*
+  As an **user** I can **like or unlike a recipe** so that **I can promote recipes I like**
 
-USER STORY: User Login Features *- Label: Must-Have*
-As an **site user** I can **create and account, login and logout from an account** so that ** I can create recipes, comment and like**
+- USER STORY: Social Media Link *- Label: Could-Have*
 
-USER STORY: View Selection of Recipe *- Label: Must-Have*
-As an **site viewer/user** I can **view a selection of recipes** so that **I can select the one I want to view**
+  As an **user/site viewer** I can **access site creators social media profiles** so that **I can find out more about the site creator or contact*
 
-USER STORY: Comment *- Label: Must-Have*
-As a **user** I can **leave comments on a post** so that **I connect and discuss of the recipes with my fellow users**
+- USER STORY: User Login Features *- Label: Must-Have*
 
-USER STORY: Admin Recipe Mangament *- Label: Could-Have*
-As an **site manager** I can **prevent any unauthorized users/visitors from accessing CRUD functionalities** so that **that only authorized users can access, delete and change the data**
+  As an **site user** I can **create and account, login and logout from an account** so that ** I can create recipes, comment and like**
 
-USER STORY: Unauthorized Access *- Label: Must-Have*
-As an **site manager** I can **prevent any unauthorized users/visitors from accessing CRUD functionalities** so that **that only authorized users can access, delete and change the data**
+- USER STORY: View Selection of Recipe *- Label: Must-Have*
 
-USER STORY: View Comments *- Label: Should-Have*
-As a **site viewer/user** I can **open a recipe* so that **I can read any comments**
+ As an **site viewer/user** I can **view a selection of recipes** so that **I can select the one I want to view**
 
-USER STORY: Manage a Recipe *- Label: Must-Have*
-As an **user** I can **create, update and modify a recipe** so that **share recipes that I like**. 
+- USER STORY: Comment *- Label: Must-Have*
 
-USER STORY: Site Navigation *- Label: Must-Have*
-As a **site viewer/user** I can **easily navigate the site** so that **I can find what I need**
+  As a **user** I can **leave comments on a post** so that **I connect and discuss of the recipes with my fellow users**
 
-USER STORY: Responsive Design *- Label: Must-Have*
-As an **site viewer/user** I can **view the site from multiple screen sizes and different devices** so that **I can access the recipe book the device I have available**
+- USER STORY: Admin Recipe Mangament *- Label: Could-Have*
 
-NOT IMPLEMENTED STORIES
+  As an **site manager** I can **prevent any unauthorized users/visitors from accessing CRUD functionalities** so that **that only authorized users can access, delete and change the data**
+
+- USER STORY: Unauthorized Access *- Label: Must-Have*
+  As an **site manager** I can **prevent any unauthorized users/visitors from accessing CRUD functionalities** so that **that only authorized users can access, delete and    change the data**
+
+- USER STORY: View Comments *- Label: Should-Have*
+
+  As a **site viewer/user** I can **open a recipe* so that **I can read any comments**
+
+- USER STORY: Manage a Recipe *- Label: Must-Have* 
+
+  As an **user** I can **create, update and modify a recipe** so that **share recipes that I like**. 
+
+- USER STORY: Site Navigation *- Label: Must-Have*
+
+  As a **site viewer/user** I can **easily navigate the site** so that **I can find what I need**
+
+- USER STORY: Responsive Design *- Label: Must-Have*
+
+  As an **site viewer/user** I can **view the site from multiple screen sizes and different devices** so that **I can access the recipe book the device I have available**
+
+**NOT IMPLEMENTED USER STORIES**
 
 All together 5 user stories weren't implemented, you may see them on the project board of this repository.
 
-USER STORY: My Profile *- Label: Could-Have*
-As an user I can view my user information so that have get more personalized experience from the application
+- USER STORY: My Profile *- Label: Could-Have* 
 
-USER STORY: Featured Recipe *- Label: Could-Have*
-As an user/visitor I can see a featured recipe on top of the page so that I get suggestions I might not search myself
+  As an user I can view my user information so that have get more personalized experience from the application
 
+- USER STORY: Featured Recipe *- Label: Could-Have*
+  
+  As an user/visitor I can see a featured recipe on top of the page so that I get suggestions I might not search myself
 
-USER STORY: Sort Recipes *- Label: Could-Have*
-As an site viewer/user I can sort recipes so that most relevant recipe is shown
+- USER STORY: Sort Recipes *- Label: Could-Have*
 
-USER STORY: Search Recipe *- Label: Could-Have*
-As an site viewer/user I can type a search that retrieves any recipes with a match so that quickly find what I need
+  As an site viewer/user I can sort recipes so that most relevant recipe is shown
 
-USER STORY: Filter Recipes *- Label: Could-Have*
-As an site viewer/user I can filter the recipes so that I narrow down the recipes viewed
+- USER STORY: Search Recipe *- Label: Could-Have*
+
+  As an site viewer/user I can type a search that retrieves any recipes with a match so that quickly find what I need
+
+- USER STORY: Filter Recipes *- Label: Could-Have*
+
+  As an site viewer/user I can filter the recipes so that I narrow down the recipes viewed
 
 # Features
 
@@ -200,6 +210,9 @@ Only a logged in user and the author of the recipe can edit it. They have to cli
 
 Once the author clicks on the edit recipe button a edit recipe form will pop up. This form is the same as the 'Create Recipe'-form, the only difference is that the image field has an option to 'clear' the image available. This has the same required field and validation a the create recipe so if any of the required fields is unfilled or incorrectly filled the form won't submit and highlight the first issue on the form.
 
+If the the edited form is succesfully submitted a message will pop-up stating that the recipe was succesfully edited. Then the user can choose to return to the recipe they just updated or they may return to the home page to view all recipes.
+![edit recipe succesful](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/features/Screenshot%202023-06-28%20152650.png)
+
 ## Delete Recipe
 
 Only a logged in user and the author of the recipe can edit it. They have to click on the recipe they want to edit and then got to the bottom of the page where two buttons are displayed *Edit* and *Delete*. If the user is not the author they can still see the buttons but there will be red message above them stating "Only the author of this recipe can edit/delete the recipe". Clicking the buttons as non-author will lead only the recipe details page to be relaoded.
@@ -218,25 +231,25 @@ Python - Used as the backend language.
 ## Frameworks and Libraries
 Versions for all the libraries can be seen in the requirements.txt.
 
-Django - Used as the fullstack framefork to build the website
-Bootstap- CSS library used to style the html together with custom css.
-psycopg2 - A PostgreSQL database adapter for Python.
-gunicorn - A Python WSGI HTTP Server for UNIX.
-cloudinary - Used to connect python with cloudniary storage for all the statuc files.
-dj-database-url - A Django utility to utilise the DATABASE_URL environment variable to configure the Django application. Used with PostgreSQL.
-dj3-cloudinary-storage - A Django package that facilitates integration with Cloudinary storage.
-django - A python package for the Django framework.
-django-allauth - An integrated set of Django applications addressing user authentication, registration and account management.
-django-cleanup - A third-party library for Django that provides automated file cleanup functionality.
-django-crispy-forms - A Django package that provides tags and filters to control the rendering behaviour of Django forms.
-django-summernote - A Django package to allow for the embedding of the summernote text editor into Django.
-oauthlib - A generic, spec-compliant, thorough implementation of the OAuth request-signing logic for Python 3.6+.
-PyJWT - A Python library that allows for encoding and decoding of JSON Web Tokens (JWT).
-python3-openid - A set of Python packages to support use of the OpenID decentralized identity system.
-pytz - A Python package for world timezone definitions, modern and historical.
-requests-oauthlib - A Python package for OAuthlib authentication support for Requests.
-sqlparse - A non-validating SQL parser for Python.
-urllib3 -  Python library that provides HTTP client functionality for making HTTP requests
+- Django - Used as the fullstack framefork to build the website
+- Bootstap- CSS library used to style the html together with custom css.
+- psycopg2 - A PostgreSQL database adapter for Python.
+- gunicorn - A Python WSGI HTTP Server for UNIX.
+- cloudinary - Used to connect python with cloudniary storage for all the statuc files.
+- dj-database-url - A Django utility to utilise the DATABASE_URL environment variable to configure the Django application. Used with PostgreSQL.
+- dj3-cloudinary-storage - A Django package that facilitates integration with Cloudinary storage.
+- django - A python package for the Django framework.
+- django-allauth - An integrated set of Django applications addressing user authentication, registration and account management.
+- django-cleanup - A third-party library for Django that provides automated file cleanup functionality.
+- django-crispy-forms - A Django package that provides tags and filters to control the rendering behaviour of Django forms.
+- django-summernote - A Django package to allow for the embedding of the summernote text editor into Django.
+- oauthlib - A generic, spec-compliant, thorough implementation of the OAuth request-signing logic for Python 3.6+.
+- PyJWT - A Python library that allows for encoding and decoding of JSON Web Tokens (JWT).
+- python3-openid - A set of Python packages to support use of the OpenID decentralized identity system.
+- pytz - A Python package for world timezone definitions, modern and historical.
+- requests-oauthlib - A Python package for OAuthlib authentication support for Requests.
+- sqlparse - A non-validating SQL parser for Python.
+- urllib3 -  Python library that provides HTTP client functionality for making HTTP requests
 
 ## Software and Web Applications Used
 Following applications were used to make this project:
@@ -255,7 +268,6 @@ Following applications were used to make this project:
 - PowerPoint - Used for creating the site wireframes.
 
 # Tests
-## Manual Testing
 ## Validator Tests
 Validators services where used to validate sites HTML and python code. JavaScript was not used during this project .
 
@@ -282,7 +294,7 @@ Validation results from urls.py:![urls.py:](https://github.com/HMuraja/p4-recipe
 Validation results from views.py:![views.py:](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/ci-python-linter-views-py.png)
 
 ## Tests on user stories
-Site was tested to confirm the acceptance criteria and tasks were fullfilled. 
+Site was tested to confirm the acceptance criteria and tasks on the User Stories were full-filled. 
 
 ### USER STORY: Like a recipe
 As an **user** I can **like or unlike a recipe** so that **I can promote recipes I like**
