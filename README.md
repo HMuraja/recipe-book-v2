@@ -1,10 +1,27 @@
-# Don't Break The Spaghetti
-Your community for learning and sharing traditions of Italian cuisine
+
+<div align=center>
+  <h1><strong>Project 4 - Don't Break The Spaghetti </strong></h1>
+
+*Your community for learning and sharing traditions of Italian cuisine* <br>
+  
+  <img src="/readme/images/p4-am-i-responsive.png" width=65%>
+
+![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Gitpod](https://img.shields.io/badge/gitpod-f06611.svg?style=for-the-badge&logo=gitpod&logoColor=white)
+![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
+
+
+[View the live site here](https://dbts-recipe-app-f9995cb6b9df.herokuapp.com/)
+
+</div>
+
 
 Don't Break the Spaghetti is a recipe book of traditional italian recipes. Users can register for the site in order to post a recipe, like or comment on other recipes. Site is for anyone interested of traditional Italian cuisine and acts as a community allowing users to interact one another.
 
-[View the active site here](https://dbts-recipe-app-f9995cb6b9df.herokuapp.com/)
-![Am I responsive view of the site](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/p4-am-i-responsive.png)
+
 
 ## Project Goal
 ### Problem Statement
@@ -27,8 +44,10 @@ I am **a user** trying to **find an application where I can share my interest fo
 A wireframe for the home page was made using powerpoint.
 
 The design for the fron page needed to display multiple recipe cards, header with navigation menu on top, a footer with social media links and a button to share recipes(if logged in). This original wireframe incuded a search and filter tab above the recipes but it was not implemented. Each page of the site should have the same header and footer for each page. Mobile version design should have a dropdown icon for the navigation links.
-![Wireframe for the fron page](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/p4-dbts-wireframe2.png)
 
+<div align=center>
+  <img src="/readme/images/p4-dbts-wireframe2.png" width=65%>
+</div>
 
 The design for the recipe should have dedicated areas for the image, summary(green section), description, ingerdients and method. Comments should be stacked under the recipe. The layout in the final product variated slightly, where the description, ingredients and method ended up being under one another. The button for editing and deleting the recipe ended up being below all the recipe content with the date of creation.
 ![Wireframe for the recipe details](https://github.com/HMuraja/p4-recipe-book/blob/main/readme/images/p4-dbts-wireframe1.png)
