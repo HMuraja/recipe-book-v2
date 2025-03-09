@@ -351,7 +351,8 @@ Following applications were used to make this project:
 - App Diagrams - An application used to create database diagrams to visualize the data structure.
 - Cloudinary - A cloud-based storage for static files, used to store project images.
 - Coolors -  Used to generate image of the color scheme.
-- ElephantSQL - A PostgreSQL database hosting service used to store data in this process.
+- ~ElephantSQL - A PostgreSQL database hosting service used to store data in this process.~
+- SupaBase - hosting service used to store project data.
 - FontAwesome - Used to generate icons for the project.
 - GitHub - An online repository and version control. Also used as the project management tool.
 - GitPod - An online code editor used during this process.
