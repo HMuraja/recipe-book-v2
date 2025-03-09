@@ -38,55 +38,49 @@
         <div class="row">
             <!-- NavBar-->
             <nav class="navbar navbar-expand-lg navbar-light bg-white">
-                <div class="container-fluid justify-content-end">
-                    <button class="navbar-toggler me-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarText">
-                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                            <li class="nav-item ms-auto">
-                                <a class="nav-link active " aria-current="page" href="{% url 'home' %}">Home</a>
-                            </li>
-                            <!-- NavBar Options for Logged in users -->
-                            {% if user.is_authenticated %}
-                            <li class="nav-item ms-auto ">
-                                <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                            </li>
-                            <li class="nav-item ms-auto ">
-                                <a class="nav-link" href="{% url 'recipe_share' %}">
-                                    Share a Recipe</a>
-                            </li>
-                            <!-- Displays user's username whne logged in -->
-                            <li class="nav-item ms-auto ">
-                                <p class="alert bg-success text-white" role="alert">
-                                    Logged In as <strong>{{ user.username }}</strong>                   
-                                </p>
-                            </li>
-                            <!-- NavBar options for viewers -->
-                            {% else %}
-                            <li class="nav-item ms-auto ">
-                                <a class="nav-link" href="{% url 'account_signup' %}">Signup</a>
-                            </li>
-                            <li class="nav-item ms-auto ">
-                                <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                            </li>
-                            {% endif %}
-                        </ul>
-                    </div>
+                <!-- Titlle, logo and 'home'-link -->
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    Don't Break the Spaghetti
+                </a>
+                <button class="navbar-toggler me-0 " type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
+                        <li class="nav-item ms-auto">
+                            <a class="nav-link active " aria-current="page" href="{% url 'home' %}">Home</a>
+                        </li>
+                        <!-- NavBar Options for Logged in users -->
+                        {% if user.is_authenticated %}
+                        <li class="nav-item ms-auto ">
+                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        </li>
+                        <li class="nav-item ms-auto ">
+                            <a class="nav-link" href="{% url 'recipe_share' %}">
+                                Share a Recipe</a>
+                        </li>
+                        <!-- Displays user's username whne logged in -->
+                        <li class="nav-item ms-auto ">
+                            <p class="alert bg-success text-white" role="alert">
+                                Logged In as <strong>{{ user.username }}</strong>                   
+                            </p>
+                        </li>
+                        <!-- NavBar options for viewers -->
+                        {% else %}
+                        <li class="nav-item ms-auto ">
+                            <a class="nav-link" href="{% url 'account_signup' %}">Signup</a>
+                        </li>
+                        <li class="nav-item ms-auto ">
+                            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                        </li>
+                        {% endif %}
+                    </ul>
                 </div>
             </nav>
         </div>
-        <!-- Titlle, logo and 'home'-link -->
-        <div class="row">
-            <div class="col">
-                <a class="brand" href="{% url 'home' %}"><h1 class="brand">
-                    Don't Break the Spaghetti
-                </h1></a>
-            </div>
-        </div>
-        <hr>
-    </div>
+
+
 
     <main class="flex-shrink-0 main-bg">
         {% block content %}
