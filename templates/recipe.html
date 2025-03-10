@@ -71,10 +71,10 @@
             {% if user.is_authenticated  %}
 
             <!-- Edit button and link to the template -->
-            <a class="btn btn-warning m-1" href="{% url 'edit_recipe' recipe.id %}"> Edit Recipe</a>
+            <a class="btn btn-yellow m-1" href="{% url 'edit_recipe' recipe.id %}"> Edit Recipe</a>
             
             <!-- Delete Button -->
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal">
+            <button type="button" class="btn btn-red" data-bs-toggle="modal" data-bs-target="#delete-modal">
                 Delete Recipe
               </button>
 
@@ -97,9 +97,9 @@
                 </p>
                 <div class="modal-footer d-flex justify-content-center">
                     <!-- Delete Link Activates DeleteRecipe View -->
-                    <a class="btn btn-danger m-1" href="{% url 'delete_recipe' recipe.id %}"> Yes, Delete</a>
+                    <a class="btn btn-red m-1" href="{% url 'delete_recipe' recipe.id %}"> Yes, Delete</a>
                     <!-- Close Button -->
-                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">No, Return</button>
+                    <button type="button" class="btn btn-yellow" data-bs-dismiss="modal">No, Return</button>
                 </div>
             </div>
         </div>  
@@ -114,7 +114,7 @@
                 <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-warning mt-1">Submit</button>
+                    <button type="submit" class="btn btn-yellow mt-1">Submit</button>
                 </form>
                 {% endif %}
 

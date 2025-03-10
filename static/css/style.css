@@ -4,18 +4,62 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-h1 {
-    font-family: 'Josefin Slab', serif;
-    color: #C62828;
-    font-weight: 500;
+:root {
+    --c-green: #344D45; 
+    --c-yellow: #DEAA58; 
+    --c-red: #75242F; 
+    --c-dark-grey: #333333;
+    --c-soft-white: #F9FAFC;
 }
+
+.btn-green {
+    background-color: var(--c-green);
+    color: var(--c-soft-white);
+    border: none;
+    border-radius: 5px;
+}
+.btn-red {
+    background-color: var(--c-red);
+    color: var(--c-soft-white);
+    border: none;
+    border-radius: 5px;
+}
+.btn-yellow {
+    background-color: var(--c-yellow);
+    color: var(--c-soft-white);
+    border: none;
+    border-radius: 5px;
+}
+
+.bg-yellow{
+    background-color: var(--c-yellow);
+}
+
+
+/*NAVIGATION*/
 
 .brand {
     text-decoration: none;
     text-align: center;
 }
 
+.nav-column{
+    width: fit-content;
+}
 
+.nav-link{
+    letter-spacing: 2px;
+}
+
+.bg-c-red{
+    background-color: var(--c-red);
+}
+
+.username-nav-text{
+    background-color: var(--c-soft-white);
+    border-radius: 5px;
+    color: var(--c-red);
+}
 .container-max-width{
     max-width: 1700px;
     margin: auto;
@@ -23,6 +67,15 @@ h1 {
 }
 
 /*ALL RECIPES*/
+
+.recipe-header{
+    background-color: var(--c-green);
+    color: var(--c-soft-white);
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 5px;
+
+}
 
 .card-title {
     font-family: 'Fira Sans Condensed', sans-serif;
@@ -34,7 +87,6 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .likes-parent{
@@ -47,7 +99,7 @@ h1 {
     top: 10px;
     z-index: 50;
     color: #f7f7f7;
-    background-color: #C62828;
+    background-color: var(--c-red);
     padding: 10px;
 }
 
@@ -103,7 +155,7 @@ object-fit: cover;
 
 .post-link:hover,
 .page-link {
-    color: #a11c30;
+    color: var(--c-re);
 }
 
 .grey-title {
@@ -118,7 +170,7 @@ object-fit: cover;
 }
 
 .masthead-text {
-    background-color: #C62828;
+    background-color: var(--c-red);
     color: #F5F0E6;
 }
 
@@ -178,9 +230,9 @@ object-fit: cover;
 
 .recipe-editing-messages{
     list-style-type: none;
-    color: #C62828;
+    color: var(--c-re);
     padding-left:0;
-    border: #C62828 solid 1px;
+    border: var(--c-re) solid 1px;
     background-color: #fbdada;
     border-radius: 5px;
     width:fit-content;

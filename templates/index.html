@@ -17,7 +17,7 @@
         {% endif %}
     </div>
     <!-- Recipes Selction/List -->
-    <div class="row bg-success text-center m-1 text-light">
+    <div class="row recipe-header text-center m-1 py-2 text-light">
         <h2>Recipes</h2>
     </div>
     
@@ -25,7 +25,7 @@
         <div class="col">
             <!-- Sharenrecipe Button only visible for the logged in users -->
             {% if user.is_authenticated %}
-            <a class="btn btn-warning m-1 " href="{% url 'recipe_share' %}" type="button">
+            <a class="btn btn-yellow m-1 " href="{% url 'recipe_share' %}" type="button">
                 Share a Recipe</a>
                 {% endif %}
         </div>
