@@ -1,4 +1,5 @@
 {% load static %}
+{% load cloudinary %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +17,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300&family=Josefin+Slab:wght@300;500&family=Lato:wght@300&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/abe8d276a8.js" crossorigin="anonymous"></script>
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
     <!-- Bootsrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
@@ -28,7 +31,7 @@
     <!-- Css -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}?v=3">
     <!-- Cloudniary -->
-    <link rel="shortcut icon" href="https://res.cloudinary.com/dyoueyepq/image/upload/v1687794800/p4-favicon_tzdnph.png">
+    <link rel="shortcut icon" href="{% static 'img/dbts_favicon.png'%}">
 
 </head>
 
@@ -40,7 +43,8 @@
         <nav class="navbar navbar-expand-lg navbar-dark fs-6">
             <!-- Titlle, logo and 'home'-link -->
             <a class="navbar-brand" href="{% url 'home' %}">
-                <img class="w-100" src="https://res.cloudinary.com/dyoueyepq/image/upload/v1687794800/dbts_logo_4_white_ui9hu6.png" alt="logo" width="30" height="30" class="d-inline-block align-text-top">
+                <img class="w-auto mb-2" src= "{% static 'img/dbts_icon.png'%}" alt="logo" height="30"> 
+                <img class="w-100" src= "{% static 'img/dbts_logo_4_white.png'%}" alt="logo" width="30" height="30" class="d-inline-block align-text-top">
             </a>
             <button class="navbar-toggler me-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,7 +63,7 @@
                     <li class="nav-item me-auto text-uppercase">
                         <a class="nav-link" href="{% url 'account_logout' %}">
                             <i class="fa-solid fa-right-from-bracket"></i>
-                            Logout
+                            Log out
                         </a>
                     </li>
                     <li class="nav-item me-auto text-uppercase">
