@@ -43,7 +43,7 @@ body {
     text-align: center;
 }
 
-.nav-column{
+.w-fit{
     width: fit-content;
 }
 
@@ -52,6 +52,9 @@ body {
 }
 
 .bg-c-red{
+    background-color: var(--c-red);
+}
+.bg-c-green{
     background-color: var(--c-red);
 }
 
@@ -67,14 +70,30 @@ body {
 }
 
 /*ALL RECIPES*/
-
 .recipe-header{
-    background-color: var(--c-green);
-    color: var(--c-soft-white);
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 5px;
+    height: 200px;
+    color: var(--c-red);
+    border-bottom: solid 2px var(--c-red);
+    border-top: solid 2px var(--c-red);
+}
 
+
+.img-size{
+    max-height: 75%;
+    width: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 770px) {
+    .img-size{
+        max-width: 25%;
+    }
+    .center-col{
+        max-width: 50%;
+    }
+    .btn-text{
+        font-size: x-small;
+    }
 }
 
 .card-title {

@@ -1,36 +1,40 @@
+
 {% extends "base.html" %}{% block content %}
+{% load static %}
 
-
-<div class="container container-max-width">
-    <div class="row ">
-        <!-- Welcoming statements -->
-        {% if user.is_authenticated %}
-        <!-- Statement for logged in users -->
-        <p class="text-muted text-center">
-            Ready to share ypur love for traditional Italian cuisine
-        </p>
-        {% else %}
-        <!-- Statement for viewer -->
-        <p class="text-muted text-center">
-            Your community for learning and sharing traditions of Italian cuisine
-        </p>        
-        {% endif %}
-    </div>
-    <!-- Recipes Selction/List -->
-    <div class="row recipe-header text-center m-1 py-2 text-light">
-        <h2>Recipes</h2>
-    </div>
-    
-    <div class="row">
-        <div class="col">
+<!-- Recipes Selction/List --> 
+<div class="container container-max-width py-4">
+    <div class="row flex-row align-items-center justify-content-center recipe-header">
+            <img class="img-size" src="{% static 'img/dbts_rigatoni_r.png' %}" alt="Italian Cuisine">
+        <div class="d-flex align-items-center flex-column justify-content-center center-col w-auto">
+            <h2 class="text-uppercase fw-bold">Recipes</h2>
+            <!-- Welcoming statements -->
+            {% if user.is_authenticated %}
+            <!-- Statement for logged in users -->
+            <p class="text-center">
+                Ready to share your love for traditional Italian cuisine
+            </p>
+            {% else %}
+            <!-- Statement for viewer -->
+            <p class="text-center">
+                Your community for learning and sharing traditions of Italian cuisine
+            </p>        
+            {% endif %}
             <!-- Sharenrecipe Button only visible for the logged in users -->
             {% if user.is_authenticated %}
-            <a class="btn btn-yellow m-1 " href="{% url 'recipe_share' %}" type="button">
-                Share a Recipe</a>
-                {% endif %}
+            <a class="btn btn-yellow m-1 text-uppercase fw-bold w-fit btn-text" href="{% url 'recipe_share' %}" type="button">
+                <i class="fa-solid fa-pen-to-square"></i> Share a Recipe</a>
+            {% endif %}
         </div>
+
+        <img class="img-size" src="{% static 'img/dbts_parmigiano_r.png' %}" alt="Italian Cuisine">
+
     </div>
-    <div class="row">
+</div> 
+
+<div class="container container-max-width p-0">
+ 
+    <div class="row position-relative">
         <div class="col-12 mt-3 left">
             <div class="row">
             <!-- Loop of all the recipe instances that are displayed as cards -->

@@ -29,7 +29,7 @@
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <!-- Css -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=3">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v2">
     <!-- Cloudniary -->
     <link rel="shortcut icon" href="{% static 'img/dbts_favicon.png'%}">
 
@@ -38,60 +38,64 @@
 <body class="d-flex flex-column h-100 main-bg">
 
 
-    <div class="container container-max-width bg-c-red">
-        <!-- NavBar-->
-        <nav class="navbar navbar-expand-lg navbar-dark fs-6">
-            <!-- Titlle, logo and 'home'-link -->
-            <a class="navbar-brand" href="{% url 'home' %}">
-                <img class="w-auto mb-2" src= "{% static 'img/dbts_icon.png'%}" alt="logo" height="30"> 
-                <img class="w-100" src= "{% static 'img/dbts_logo_4_white.png'%}" alt="logo" width="30" height="30" class="d-inline-block align-text-top">
-            </a>
-            <button class="navbar-toggler me-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end " id="navbarText">
-                <ul class="navbar-nav mb-2 mb-lg-0 nav-column ms-auto">
-                    <li class="nav-item me-auto text-uppercase">
-                        <a class="nav-link active " aria-current="page" href="{% url 'home' %}">
-                            <i class="fa-solid fa-house"></i>
-                            Home
-                        </a>
-                    </li>
-                    <!-- NavBar Options for Logged in users -->
-                    {% if user.is_authenticated %}
-                    <li class="nav-item me-auto text-uppercase">
-                        <a class="nav-link" href="{% url 'account_logout' %}">
-                            <i class="fa-solid fa-right-from-bracket"></i>
-                            Log out
-                        </a>
-                    </li>
-                    <li class="nav-item me-auto text-uppercase">
-                        <a class="nav-link" href="{% url 'recipe_share' %}">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                            Share a Recipe
-                        </a>
-                    </li>
-                    <!-- Displays user's username whne logged in -->
-                    <li class="nav-item me-auto d-flex justify-content-center align-items-center">
-                        <p class="m-0 username-nav-text px-2 py-1 rounded">
-                            <i class="fa-solid fa-user"></i>  <strong>{{ user.username }}</strong>                   
-                        </p>
-                    </li>
-                    <!-- NavBar options for viewers -->
-                    {% else %}
-                    <li class="nav-item me-auto text-uppercase">
-                        <a class="nav-link" href="{% url 'account_signup' %}">Signup</a>
-                    </li>
-                    <li class="nav-item me-auto text-uppercase">
-                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                    </li>
-                    {% endif %}
-                </ul>
-            </div>
-        </nav>
-    </div>
 
+    <div class="vw-100 bg-c-red">
+        <div class="container container-max-width">
+            <!-- NavBar-->
+            <nav class="navbar navbar-expand-lg navbar-dark fs-6">
+                <!-- Titlle, logo and 'home'-link -->
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <img class="w-auto mb-2" src= "{% static 'img/dbts_icon.png'%}" alt="logo" height="30"> 
+                    <img class="w-100" src= "{% static 'img/dbts_logo_4_white.png'%}" alt="logo" width="30" height="30" class="d-inline-block align-text-top">
+                </a>
+                <button class="navbar-toggler me-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end " id="navbarText">
+                    <ul class="navbar-nav mb-2 mb-lg-0 w-fit ms-auto">
+                        <li class="nav-item me-auto text-uppercase">
+                            <a class="nav-link active " aria-current="page" href="{% url 'home' %}">
+                                <i class="fa-solid fa-house"></i>
+                                Home
+                            </a>
+                        </li>
+                        <!-- NavBar Options for Logged in users -->
+                        {% if user.is_authenticated %}
+                        <li class="nav-item me-auto text-uppercase">
+                            <a class="nav-link" href="{% url 'account_logout' %}">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                Log out
+                            </a>
+                        </li>
+                        <li class="nav-item me-auto text-uppercase">
+                            <a class="nav-link" href="{% url 'recipe_share' %}">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                                Share a Recipe
+                            </a>
+                        </li>
+                        <!-- Displays user's username whne logged in -->
+                        <li class="nav-item me-auto d-flex justify-content-center align-items-center">
+                            <p class="m-0 username-nav-text px-2 py-1 rounded">
+                                <i class="fa-solid fa-user"></i>  <strong>{{ user.username }}</strong>                   
+                            </p>
+                        </li>
+                        <!-- NavBar options for viewers -->
+                        {% else %}
+                        <li class="nav-item me-auto text-uppercase">
+                            <a class="nav-link" href="{% url 'account_signup' %}">Signup</a>
+                        </li>
+                        <li class="nav-item me-auto text-uppercase">
+                            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+    </div>
+   
 
 
     <main class="flex-shrink-0 main-bg">
