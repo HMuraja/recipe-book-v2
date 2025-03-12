@@ -6,8 +6,6 @@ body {
 
 .container-max-width{
     max-width: 1700px;
-    margin: auto;
-
 }
 
 :root {
@@ -37,6 +35,10 @@ body {
     border-radius: 5px;
 }
 
+.white-bg {
+    background-color: var(--c-soft-white);
+}
+
 .bg-yellow{
     background-color: var(--c-yellow);
 }
@@ -62,10 +64,10 @@ body {
 }
 
 /*NAVIGATION*/
-
 .brand {
-    text-decoration: none;
-    text-align: center;
+    max-height: 30px;
+    width: auto;
+    object-fit: contain;
 }
 
 .w-fit{
@@ -95,18 +97,6 @@ body {
     max-height: 75%;
     width: auto;
     object-fit: contain;
-}
-
-@media (max-width: 770px) {
-    .img-size{
-        max-width: 25%;
-    }
-    .center-col{
-        max-width: 50%;
-    }
-    .btn-text{
-        font-size: x-small;
-    }
 }
 
 .card-title {
@@ -143,10 +133,6 @@ body {
     background-color: #f7f7f7;
     border: none;
 
-}
-
-.main-bg {
-    background-color: var(--c-soft-white);
 }
 
 .card {
@@ -267,4 +253,22 @@ object-fit: cover;
     background-color: #fbdada;
     border-radius: 5px;
     width:fit-content;
+}
+
+@media (min-width: 770px) {
+    .img-size{
+        max-width: 25%;
+    }
+    .center-col{
+        max-width: 50%;
+    }
+    
+    .btn-text{
+        font-size: x-small;
+    }
+    .brand {
+        max-height: 20px;
+        width: auto;
+        object-fit: contain;
+    }
 }

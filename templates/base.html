@@ -33,22 +33,21 @@
 
 </head>
 
-<body class="d-flex flex-column vh-100 main-bg m m-0 p-0">
+<body class="d-flex flex-column v-100 vh-100 white-bg">
 
-    <div class="vw-100 bg-c-red nav-h">
-        <div class="container container-max-width">
+    <div class="v-100 m-0 bg-c-red">
             <!-- NavBar-->
-            <nav class="navbar navbar-expand-lg navbar-dark fs-6">
+            <nav class="navbar container-max-width mx-auto navbar-expand-lg navbar-dark fs-6 ">
                 <!-- Titlle, logo and 'home'-link -->
-                <a class="navbar-brand" href="{% url 'home' %}">
-                    <img class="w-auto mb-2" src= "{% static 'img/dbts_icon.png'%}" alt="logo" height="30"> 
-                    <img class="w-100" src= "{% static 'img/dbts_logo_4_white.png'%}" alt="logo" width="30" height="30" class="d-inline-block align-text-top">
+                <a class="navbar-brand ms-3" href="{% url 'home' %}">
+                    <img class="brand mb-2" src= "{% static 'img/dbts_icon.png'%}" alt="logo"> 
+                    <img class="brand" src= "{% static 'img/dbts_logo_4_white.png'%}" alt="logo" class="d-inline-block align-text-top">
                 </a>
-                <button class="navbar-toggler me-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-end " id="navbarText">
+                <div class="collapse navbar-collapse justify-content-end me-3" id="navbarText">
                     <ul class="navbar-nav mb-2 mb-lg-0 w-fit ms-auto">
                         <li class="nav-item me-auto text-uppercase">
                             <a class="nav-link active " aria-current="page" href="{% url 'home' %}">
@@ -88,11 +87,9 @@
                     </ul>
                 </div>
             </nav>
-        </div>
-
     </div>
    
-    <main class="flex-shrink-0 main-bg h-auto">
+    <main class="container white-bg h-auto container-max-width mx-auto">
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
