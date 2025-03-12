@@ -14,6 +14,7 @@ body {
     --c-red: #75242F; 
     --c-dark-grey: #333333;
     --c-soft-white: #F9FAFC;
+    --c-cream: #f8efdb;
 }
 
 .btn-green {
@@ -39,8 +40,8 @@ body {
     background-color: var(--c-soft-white);
 }
 
-.bg-yellow{
-    background-color: var(--c-yellow);
+.bg-cream{
+    background-color: var(--c-cream);
 }
 
 .bg-green{
@@ -51,8 +52,12 @@ body {
     background-color: var(--c-red);
 }
 
+.border-green{
+    border-color: var(--c-red) !important;
+}
+
 .text-red{
-    color: var(--c-red);
+    color: var(--c-red) !important;
 }
 
 .text-green{

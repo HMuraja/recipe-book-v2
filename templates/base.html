@@ -27,7 +27,7 @@
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <!-- Css -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}?v2">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- Cloudniary -->
     <link rel="shortcut icon" href="{% static 'img/dbts_favicon.png'%}">
 
@@ -89,14 +89,14 @@
             </nav>
     </div>
    
-    <main class="container white-bg h-auto container-max-width mx-auto">
+    <main class="container white-bg container-max-width mx-auto">
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
     </main>
 
     <!-- Footer -->
-    <footer class="bg-green bottom-0 w-100 py-3 text-light mt-auto text-center">
+    <footer class= "bg-green bottom-0 w-100 py-3 text-light mt-auto text-center">
         <p class="text-uppercase w-auto mb-2 d-inline-block fw-bolder border-bottom border-2">Find out more</p> 
         <br/>
         <a href="https://github.com/HMuraja/mythology-quiz" rel="noopener" aria-label="Visit the authors GitHub profile (opens in a new tab)" class="fs-3 text-light px-1" target="_blank">
