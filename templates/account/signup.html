@@ -6,22 +6,28 @@
 
 <!-- Register/SIgn in, template modified from AllAuth template libraray -->
 {% block content %}
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-auto shadow-lg p-4 m-3 rounded">
-      <h2 class="fw-bold grey-title">{% trans "Sign Up" %}</h2>
+  <div class="row h-100">
+    <div class="col-auto m-auto shadow-lg py-3 px-5 rounded text-center">
+      <h2 class="form-title text-center border-bottom border-2 border-green">{% trans "Sign Up" %}</h2>
 
-      <p>{% blocktrans %}Already have an account? Then please <a class="fw-bold link-danger" href="{{ login_url }}">sign In</a>.{% endblocktrans %}</p>
-
-      <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+      <form class="signup my-4" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
         {{ form.as_p }}
         {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        <input class="rounded-pill" type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="btn btn-red" type="submit">{% trans "Sign Up" %} &raquo;</button>
+        <button class="btn btn-green text-uppercase text-spaced fw-bold" type="submit">{% trans "Sign Up" %}</button>
       </form>
+
+      <div class="pt-2">
+        {% blocktrans %}
+        <p>Already have an account? Please     
+          <a class="text-red fw-bold text-uppercase pt-2" href="{{ login_url }}">
+            Sign In
+          </a>.
+        </p> 
+        {% endblocktrans %}
+      </div>
     </div>
   </div>
-</div>
 {% endblock %}

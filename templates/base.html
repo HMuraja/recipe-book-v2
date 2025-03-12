@@ -2,7 +2,7 @@
 {% load cloudinary %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 
 <head>
     <!-- Meta -->
@@ -27,13 +27,13 @@
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <!-- Css -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v2">
     <!-- Cloudniary -->
     <link rel="shortcut icon" href="{% static 'img/dbts_favicon.png'%}">
 
 </head>
 
-<body class="d-flex flex-column v-100 vh-100 white-bg">
+<body class="d-flex flex-column v-100 h-100 white-bg">
 
     <div class="v-100 m-0 bg-c-red">
             <!-- NavBar-->
@@ -89,7 +89,7 @@
             </nav>
     </div>
    
-    <main class="container white-bg container-max-width mx-auto">
+    <main class="container white-bg container-max-width mx-auto h-100">
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}

@@ -6,6 +6,7 @@ body {
 
 .container-max-width{
     max-width: 1700px;
+    box-sizing: border-box;
 }
 
 :root {
@@ -87,6 +88,53 @@ body {
     background-color: var(--c-soft-white);
     border-radius: 5px;
     color: var(--c-red);
+}
+/*Sing up and log in*/
+.form-title{
+    font-family: 'Fira Sans Condensed', sans-serif;
+    color: var(--c-red);
+    font-weight: 600;
+}
+
+form p{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form label{
+    display: none;
+}
+
+form input{
+    background-color: transparent;
+    padding-bottom: 5px;
+    text-align: center;
+    width: 90%;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--c-red);
+}
+
+form input:focus {
+    outline: none;
+    background-color: var(--c-soft-white);
+}
+#id_remember{
+    width: auto;
+    margin-right: auto;
+}
+p:has(#id_remember){
+    flex-direction: row;
+    justify-content: center;
+}
+
+p:has(#id_remember) label{
+    display: block !important;
+    width: 55%;
+    margin-right: 10px;
+    text-align: right;
 }
 
 /*ALL RECIPES*/

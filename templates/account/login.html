@@ -7,27 +7,27 @@
 
 {% block content %}
 <!-- Login, template modified from AllAuth template libraray -->
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-auto shadow-lg p-4 m-3 rounded">
-      <h2 class="fw-bold">{% trans "Login" %}</h2>
 
-      <p>{% blocktrans %}If you have not created an account yet, then please
-      <a class="fw-bold link-danger" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+<div class="row h-100">
+  <div class="col-auto m-auto shadow-lg py-3 px-5 rounded text-center">
+    <h2 class="form-title text-center border-bottom border-2 border-green">{% trans "Login" %}</h2>
 
-      <form class="login" method="POST" action="{% url 'account_login' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-        {% endif %}
-        <button class="primaryAction btn btn-red" type="submit">{% trans "Log In" %}</button>   
-      </form>
+   
 
-    </div>
+    <form class="login my-4" method="POST" action="{% url 'account_login' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+      {% endif %}
+      <button class="btn btn-green text-uppercase text-spaced fw-bold" type="submit">{% trans "Log In" %}</button>   
+    </form>
+    <p>{% blocktrans %}If you have not created an account yet, then please
+      <a class="text-red fw-bold text-uppercase pt-2" href="{{ signup_url }}">sign up</a>.{% endblocktrans %}</p>
+
   </div>
-
 </div>
+
 
 
 
