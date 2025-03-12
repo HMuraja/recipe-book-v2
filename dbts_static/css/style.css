@@ -4,6 +4,12 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+.container-max-width{
+    max-width: 1700px;
+    margin: auto;
+
+}
+
 :root {
     --c-green: #344D45; 
     --c-yellow: #DEAA58; 
@@ -35,6 +41,25 @@ body {
     background-color: var(--c-yellow);
 }
 
+.bg-green{
+    background-color: var(--c-green);
+}
+
+.bg-c-red{
+    background-color: var(--c-red);
+}
+
+.text-red{
+    color: var(--c-red);
+}
+
+.text-green{
+    color: var(--c-green);
+}
+
+.text-spaced{
+    letter-spacing: 2px;
+}
 
 /*NAVIGATION*/
 
@@ -51,22 +76,10 @@ body {
     letter-spacing: 2px;
 }
 
-.bg-c-red{
-    background-color: var(--c-red);
-}
-.bg-c-green{
-    background-color: var(--c-red);
-}
-
 .username-nav-text{
     background-color: var(--c-soft-white);
     border-radius: 5px;
     color: var(--c-red);
-}
-.container-max-width{
-    max-width: 1700px;
-    margin: auto;
-
 }
 
 /*ALL RECIPES*/
@@ -133,7 +146,7 @@ body {
 }
 
 .main-bg {
-    background-color: #fff;
+    background-color: var(--c-soft-white);
 }
 
 .card {
@@ -147,7 +160,6 @@ body {
 
 
 .image-container {
-    width: 100%;
     max-width: 100%;
 }
   
@@ -174,7 +186,7 @@ object-fit: cover;
 
 .post-link:hover,
 .page-link {
-    color: var(--c-re);
+    color: var(--c-red);
 }
 
 .grey-title {
@@ -249,9 +261,9 @@ object-fit: cover;
 
 .recipe-editing-messages{
     list-style-type: none;
-    color: var(--c-re);
+    color: var(--c-red);
     padding-left:0;
-    border: var(--c-re) solid 1px;
+    border: var(--c-red) solid 1px;
     background-color: #fbdada;
     border-radius: 5px;
     width:fit-content;

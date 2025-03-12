@@ -2,7 +2,7 @@
 {% extends "base.html" %}{% block content %}
 {% load static %}
 
-<!-- Recipes Selction/List --> 
+<!-- Recipes Header Section --> 
 <div class="container container-max-width py-4">
     <div class="row flex-row align-items-center justify-content-center recipe-header">
             <img class="img-size" src="{% static 'img/dbts_rigatoni_r.png' %}" alt="Italian Cuisine">
@@ -32,17 +32,18 @@
     </div>
 </div> 
 
+<!-- Recipes Selction/List --> 
 <div class="container container-max-width p-0">
  
-    <div class="row position-relative">
+    <div class="row">
         <div class="col-12 mt-3 left">
             <div class="row">
             <!-- Loop of all the recipe instances that are displayed as cards -->
             {% for recipe in recipe_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4 card-hover">
+                <div class="col-md-4 ">
+                    <div class="card mb-4 card-hover border border-2 text-red">
                         <a class="card-body post-link" href="{% url 'recipe_detail' recipe.slug %}">
-                            <div class="image-container position-relative">
+                            <div class="image-container">
                                 <div class="image-wrapper">
                                     <img class="recipe-card-img" src=" {{ recipe.featured_image.url }}" alt="Recipes Feature Image">
                                     <p class="likes-overlay h5 mb-0 rounded-circle"><i class="far fa-heart "></i>
@@ -50,10 +51,10 @@
                                 </div>
                             </div>
                             <div class="recipe-card-layout">
-                                <h3 class="card-title mb-0">{{ recipe.name }}</h3>
+                                <h3 class="card-title mb-0 fw-bold text-red">{{ recipe.name }}</h3>
                             </div>
-                            <hr class = "hr-margin">
-                            <p class="card-text text-muted h6 ">{{ recipe.region}}, {{ recipe.city}}</p>
+                            <hr class = "hr-margin text-red fw-bold">
+                            <p class="card-text h6 text-green fw-bold text-spaced">{{ recipe.region}}, {{ recipe.city}}</p>
                             <p class="card-text ">{{ recipe.excerpt }}</p>
                         </a>
                     </div>
