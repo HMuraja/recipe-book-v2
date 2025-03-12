@@ -40,7 +40,7 @@
         <div class="row">
         <!-- Loop of all the recipe instances that are displayed as cards -->
         {% for recipe in recipe_list %}
-            <div class="col-md-4 mb-2">
+            <div class="col-md-4 col-lg-3 mb-2">
                 <div class="card h-100 mb-4 card-hover border-green border border-2">
                     <a class="card-body post-link" href="{% url 'recipe_detail' recipe.slug %}">
                         <div class="image-container">
@@ -59,7 +59,7 @@
                 </div>
             </div>
             <!-- Pagination after 6 recipe cards -->
-            {% if forloop.counter|divisibleby:3 %}
+            {% if forloop.counter|divisibleby:6 %}
         </div>
         <div class="row">
             {% endif %}
