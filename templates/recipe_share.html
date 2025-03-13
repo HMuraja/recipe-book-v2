@@ -1,39 +1,49 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load crispy_forms_tags %}
+{% load static %}
 
-
-<div class="container card">
-    <div class="row">
-        <h2 class="text-center bg-success text-center text-light">
-            Share a Recipe
-        </h2>
-        <p class="text-muted text-center">
-            Hello, {{ user.username }}! <br> Fill out the form to and share your recipe!
-        </p>
-    </div> 
-
-    {% if failed%}
-    <!-- Failed submission notification -->
-    <div class="row">
-        <div class="col">
-            <p class="text-danger">
-               Recipe couldn't be shared!<br>
-               Please check the required fields and try submitting again.
+<div class="row">
+    <div class="col d-flex align-items-center justify-content-center recipe-form-header my-2 py-2">
+        <img class="img-size mx-1" src= "{% static 'img/dbts-cookbook.png'%}" alt="illustration">
+        
+        <div class="d-flex align-items-center flex-column justify-content-center center-col w-auto">
+            <h2 class="f-theme fw-bold text-center text-center text-green text-uppercase ">
+                Share a Recipe
+            </h2>
+            <p class="text-green text-center pb-2 mb-0">
+                Hello  {{ user.username }}! <br> Fill out the form to and share your recipe!
             </p>
         </div>
-    </div>
-    {% endif %}
-    <!-- Crispy Form is shared -->
-    <div class="row">
-        <div class="col">
-            <form method="post" style="margin-top: 1.3em;" enctype="multipart/form-data">
-                {{ share_recipe_form | crispy }}
-                {% csrf_token %}
-                <button type="submit" class="btn btn-yellow mt-1">Submit</button>
-            </form>
+    
+        <img class="img-size mx-1" src= "{% static 'img/cuttingboard-g.png'%}" alt="illustration">
+    </div> 
+
+</div>
+
+
+{% if failed%}
+<!-- Failed submission notification -->
+<div class="row my-1">
+    <div class="col">
+        <p class="text-danger">
+            Recipe couldn't be shared!<br>
+            Please check the required fields and try submitting again.
+        </p>
     </div>
 </div>
+{% endif %}
+<!-- Crispy Form is shared -->
+<div class="row my-2">
+    <div class="col ">
+        <form class="d-flex flex-column recipe-form text-start" method="post" style="margin-top: 1.3em;" enctype="multipart/form-data">
+            {{ share_recipe_form | crispy }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-yellow mt-1 w-50 fw-bold text-uppercase mx-auto">Create</button>
+        </form>
+</div>
+
+
 
 
 {% if posted is True %}
@@ -47,18 +57,21 @@
 <!-- modal content if submisson is succesful -->
 
 <div class="modal fade" id="feedback-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content modal-body">
+    <div class="modal-dialog modal-dialog-centered success-modal ">
+        <div class="modal-content modal-body text-green w-100 text-center mx-1">
+            <h3 class="text-uppercase text-green fw-bold">Success!</h3>
             <p>
-            Success! just created a recipe. You can continue creating recipes or return to view the recipes. 
+             You just created a recipe. You can continue creating recipes or return to view the recipes. 
             </p>
-            <div class="modal-footer">
-                <a href= "{% url 'recipe_share' %}" type="button" class="btn btn-yellow">Share another recipe!</a>
-                <a href="{% url 'home' %}" type="button" class="btn btn-yellow">View Recipes</a>
+            <div class="w-100 modal-footer justify-content-between flex-nowrap">
+                <a href= "{% url 'recipe_share' %}" type="button" class="btn btn-text btn-yellow mt-1 fw-bold text-uppercase w-50">Share another recipe!</a>
+                <a href="{% url 'home' %}" type="button" class="btn btn-text btn-yellow mt-1 fw-bold text-uppercase w-50">View Recipes</a>
             </div>
         </div>
     </div>  
-  </div>
+</div>
+
+
   {% endif %}
 
 {% endblock content %}

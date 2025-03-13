@@ -1,7 +1,8 @@
 /*GENERAL*/
 body {
     background-color: #F9FAFC;
-    font-family: 'Lato', sans-serif;
+    font-family:var(--f-readable);
+    font-size: 1rem;
 }
 
 .container-max-width{
@@ -16,6 +17,12 @@ body {
     --c-dark-grey: #333333;
     --c-soft-white: #F9FAFC;
     --c-cream: #f8efdb;
+    --f-theme: 'Agbalumo', sans-serif;
+    --f-readable: 'Dosis', sans-serif;
+}
+
+.f-theme{
+    font-family: var(--f-theme);
 }
 
 .btn-green {
@@ -23,26 +30,31 @@ body {
     color: var(--c-soft-white);
     border: none;
     border-radius: 5px;
+    letter-spacing: 1px;
 }
 .btn-red {
     background-color: var(--c-red);
     color: var(--c-soft-white);
     border: none;
     border-radius: 5px;
+    letter-spacing: 1px;
 }
 .btn-yellow {
     background-color: var(--c-yellow);
     color: var(--c-soft-white);
     border: none;
     border-radius: 5px;
+    letter-spacing: 1px;
+}
+.btn-red-border {
+    background-color: var(--c-soft-white);
+    color: var(--c-red);
+    border: 2px solid var(--c-red);
+    border-radius: 5px;
 }
 
 .white-bg {
     background-color: var(--c-soft-white);
-}
-
-.bg-cream{
-    background-color: var(--c-cream);
 }
 
 .bg-green{
@@ -65,9 +77,6 @@ body {
     color: var(--c-green);
 }
 
-.text-spaced{
-    letter-spacing: 2px;
-}
 
 /*NAVIGATION*/
 .brand {
@@ -75,13 +84,13 @@ body {
     width: auto;
     object-fit: contain;
 }
+.nav-item{
+    font-size: medium;
+    letter-spacing: 1px;
+}
 
 .w-fit{
     width: fit-content;
-}
-
-.nav-link{
-    letter-spacing: 2px;
 }
 
 .username-nav-text{
@@ -94,23 +103,18 @@ body {
     min-width: 500px;
     margin: 5px;
 }
-.form-title{
-    font-family: 'Fira Sans Condensed', sans-serif;
-    color: var(--c-red);
-    font-weight: 600;
-}
 
-form p{
+.login-form p{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-form label{
+.login-form label{
     display: none;
 }
 
-form input{
+.login-form  input{
     background-color: transparent;
     padding-bottom: 5px;
     text-align: center;
@@ -121,7 +125,7 @@ form input{
     border-bottom: 1px solid var(--c-red);
 }
 
-form input:focus {
+.login-form  input:focus {
     outline: none;
     background-color: var(--c-soft-white);
 }
@@ -142,24 +146,17 @@ p:has(#id_remember) label{
 }
 
 /*ALL RECIPES*/
-.recipe-header{
+.page-header{
     height: 200px;
     color: var(--c-red);
     border-bottom: solid 2px var(--c-red);
     border-top: solid 2px var(--c-red);
 }
 
-
 .img-size{
     max-height: 75%;
     width: auto;
     object-fit: contain;
-}
-
-.card-title {
-    font-family: 'Fira Sans Condensed', sans-serif;
-    color: #333333;
-    font-weight: 300;
 }
 
 .recipe-card-layout {
@@ -177,7 +174,7 @@ p:has(#id_remember) label{
     right: 10px;
     top: 10px;
     z-index: 50;
-    color: #f7f7f7;
+    color: var(--c-soft-white);
     background-color: var(--c-red);
     padding: 10px;
 }
@@ -236,11 +233,49 @@ object-fit: cover;
     color: rgb(76, 79, 84);
 }
 
+/* RECIPE FORMS */
+
+.recipe-form-header{
+    height: 200px;
+    color: var(--c-green);
+    border-bottom: solid 2px var(--c-green);
+    border-top: solid 2px var(--c-green);
+}
+#id_featured_image{
+    border-bottom: none;
+    color: var(--c-green);
+}
+
+.recipe-form label{
+    margin-top: 5px;
+    color: var(--c-green);
+    font-family: var(--f-theme);
+    font-weight: 600;
+}
+
+.recipe-form input{
+    background-color: transparent;
+    border-radius: 0;
+    padding-bottom: 5px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--c-green);
+}
+
+.recipe-form textarea{
+    border-radius: 5px;
+    margin-top: 5px;
+    border-color: var(--c-green) !important;
+}
+.success-modal{
+    max-width: fit-content;
+}
+
 /* RECIPE DETAILS PAGE */
 
 .recipe-masthead-container{
     overflow: hidden;
-
 }
 
 .masthead-text {
@@ -261,24 +296,10 @@ object-fit: cover;
     object-fit: cover;
 }
 
-.recipe-title {
-    font-family: 'Fira Sans Condensed', sans-serif;
-    color: #F5F0E6;
-    font-weight: 300;
-
-}
-
 .btn-like{
     background-color: transparent;
     color: #f7f7f7;
     border: none;
-}
-
-.post-title {
-    font-family: 'Fira Sans Condensed', sans-serif;
-    color: #F5F0E6;
-    font-weight: 300;
-
 }
 
 .border-top-bottom{
@@ -293,12 +314,12 @@ object-fit: cover;
 
 .recipe-sub-headers{
     color: #333333;
-    font-family: 'Lato', sans-serif;
+    font-family:var(--f-readable);
 }
 
 .recipe-body{
     background-color: #333333;
-    font-family: 'Lato', sans-serif;
+    font-family:var(--f-readable);
     font-size: 1rem;
 }
 
@@ -321,7 +342,8 @@ object-fit: cover;
     }
     
     .btn-text{
-        font-size: x-small;
+        font-size: smaller;
+        letter-spacing: 1px;
     }
     .brand {
         max-height: 20px;

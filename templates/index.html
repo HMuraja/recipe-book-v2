@@ -5,10 +5,10 @@
 <!-- Recipes Header Section --> 
 
 <div class="row my-2">
-    <div class="col d-flex align-items-center justify-content-center recipe-header ">
-            <img class="img-size" src="{% static 'img/dbts_rigatoni_r.png' %}" alt="Italian Cuisine">
+    <div class="col d-flex align-items-center justify-content-center page-header">
+        <img class="img-size" src="{% static 'img/dbts_rigatoni_r.png' %}" alt="Italian Cuisine">
         <div class="d-flex align-items-center flex-column justify-content-center center-col w-auto">
-            <h2 class="text-uppercase fw-bold">Recipes</h2>
+            <h2 class="text-uppercase fw-bold f-theme">Recipes</h2>
             <!-- Welcoming statements -->
             {% if user.is_authenticated %}
             <!-- Statement for logged in users -->
@@ -23,7 +23,7 @@
             {% endif %}
             <!-- Sharenrecipe Button only visible for the logged in users -->
             {% if user.is_authenticated %}
-            <a class="btn btn-yellow m-1 text-uppercase fw-bold w-fit btn-text" href="{% url 'recipe_share' %}" type="button">
+            <a class="btn btn-yellow m-1 text-uppercase fw-bold w-fit btn-text f-theme" href="{% url 'recipe_share' %}" type="button">
                 <i class="fa-solid fa-pen-to-square"></i> Share a Recipe</a>
             {% endif %}
         </div>
@@ -36,12 +36,12 @@
 <!-- Recipes Selction/List --> 
 
 <div class="row mb-2">
-    <div class="col mt-3 left">
+    <div class="col mt-3">
         <div class="row">
         <!-- Loop of all the recipe instances that are displayed as cards -->
         {% for recipe in recipe_list %}
             <div class="col-md-4 col-lg-3 mb-2">
-                <div class="card h-100 mb-4 card-hover border-green border border-2">
+                <div class="card h-100 mb-4 card-hover">
                     <a class="card-body post-link" href="{% url 'recipe_detail' recipe.slug %}">
                         <div class="image-container">
                             <div class="image-wrapper">
@@ -51,9 +51,9 @@
                             </div>
                         </div>
                         <div class="recipe-card-layout border-green py-2 border-bottom border-1">
-                            <h3 class="card-title mb-0 fw-bold text-red ">{{ recipe.name }}</h3>
+                            <h3 class="f-theme mb-0 fw-bold text-red ">{{ recipe.name }}</h3>
                         </div>
-                        <p class="card-text h6 pt-2 text-green text-spaced">{{ recipe.region}}, {{ recipe.city}}</p>
+                        <p class="card-text h6 pt-2 text-green  ">{{ recipe.region}}, {{ recipe.city}}</p>
                         <p class="card-text ">{{ recipe.excerpt }}</p>
                     </a>
                 </div>
@@ -72,10 +72,10 @@
 <nav class="row" aria-label="Page navigation">
     <ul class="pagination justify-content-center">
         {% if page_obj.has_previous %}
-        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+        <li><a href="?page={{ page_obj.previous_page_number }}" class="btn btn-red-border f-theme ">&laquo; PREV </a></li>
         {% endif %}
         {% if page_obj.has_next %}
-        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+        <li><a href="?page={{ page_obj.next_page_number }}" class="btn btn-red-border f-theme"> NEXT &raquo;</a></li>
         {% endif %}
     </ul>
 </nav>

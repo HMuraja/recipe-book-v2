@@ -11,16 +11,16 @@
 <div class="row h-100">
   <div class="col-auto m-auto shadow-lg py-3 px-5 rounded text-center login-box-width">
 
-    <h2 class="form-title text-center border-bottom border-2 border-green">Log Out</h2>
+    <h2 class="f-theme fw-bold text-center border-bottom border-2 border-green">Log Out</h2>
 
     <p>Are you sure you want to log out?</p>
 
-    <form class ="my-4" method="post" action="{% url 'account_logout' %}">
+    <form id="login-form" class="login-formmy-4" method="post" action="{% url 'account_logout' %}">
       {% csrf_token %}
       {% if redirect_field_value %}
       <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
       {% endif %}
-      <button class="btn btn-red fw-bold text-uppercase text-spaced w-100" type="submit">Log Out</button>
+      <button class="btn btn-red fw-bold text-uppercase   w-100" type="submit">Log Out</button>
     </form>
 
   </div>
