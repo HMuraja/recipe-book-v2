@@ -3,16 +3,14 @@
 {% load i18n %}
 {% load account socialaccount %}
 
-{% block head_title %}{% trans "Login" %}{% endblock %}
+{% block head_title %}{% endblock %}
 
 {% block content %}
 <!-- Login, template modified from AllAuth template libraray -->
 
-<div class="row h-100">
-  <div class="col-auto m-auto shadow-lg py-3 px-5 rounded text-center">
-    <h2 class="form-title text-center border-bottom border-2 border-green">{% trans "Login" %}</h2>
-
-   
+<div class="row h-100 login-box-width">
+  <div class="col-auto m-auto shadow-lg py-4 px-5 rounded text-center login-box-width">
+    <h2 class="form-title text-center border-bottom border-2 border-green">Login</h2>
 
     <form class="login my-4" method="POST" action="{% url 'account_login' %}">
       {% csrf_token %}
@@ -20,10 +18,19 @@
       {% if redirect_field_value %}
       <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
       {% endif %}
-      <button class="btn btn-green text-uppercase text-spaced fw-bold" type="submit">{% trans "Log In" %}</button>   
+      <button class="btn btn-red text-uppercase text-spaced fw-bold w-100" type="submit">
+        <i class="fa-solid fa-right-to-bracket"></i>
+        Log In
+      </button>   
     </form>
-    <p>{% blocktrans %}If you have not created an account yet, then please
-      <a class="text-red fw-bold text-uppercase pt-2" href="{{ signup_url }}">sign up</a>.{% endblocktrans %}</p>
+    <p>{% blocktrans %}Don't have an account?
+      <a class="btn btn-red fw-bold text-uppercase text-spaced w-100" href="{{ signup_url }}">
+        <i class="fa-solid fa-user-plus"></i>
+        Create an Account
+      </a>
+      {% endblocktrans %}
+    </p>
+
 
   </div>
 </div>

@@ -2,29 +2,29 @@
 
 {% load i18n %}
 
-{% block head_title %}{% trans "Logout" %}{% endblock %}
+{% block head_title %}{% endblock %}
 
 {% block content %}
 
 <!-- Logout in, template modified from AllAuth template libraray -->
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-auto shadow-lg p-4 m-3 rounded">
 
-      <h2 class="fw-bold grey-title">{% trans "Logout" %}</h2>
+<div class="row h-100">
+  <div class="col-auto m-auto shadow-lg py-3 px-5 rounded text-center login-box-width">
 
-      <p>{% trans 'Are you sure you want to log out?' %}</p>
+    <h2 class="form-title text-center border-bottom border-2 border-green">Log Out</h2>
 
-      <form method="post" action="{% url 'account_logout' %}">
-        {% csrf_token %}
-        {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-        {% endif %}
-        <button class="btn btn-red" type="submit">{% trans 'Log Out' %}</button>
-      </form>
+    <p>Are you sure you want to log out?</p>
 
-    </div>
+    <form class ="my-4" method="post" action="{% url 'account_logout' %}">
+      {% csrf_token %}
+      {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+      {% endif %}
+      <button class="btn btn-red fw-bold text-uppercase text-spaced w-100" type="submit">Log Out</button>
+    </form>
+
   </div>
 </div>
+
 
 {% endblock %}

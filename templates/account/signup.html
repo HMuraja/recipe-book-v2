@@ -2,13 +2,13 @@
 
 {% load i18n %}
 
-{% block head_title %}{% trans "Signup" %}{% endblock %}
+{% block head_title %}{% endblock %}
 
 <!-- Register/SIgn in, template modified from AllAuth template libraray -->
 {% block content %}
   <div class="row h-100">
-    <div class="col-auto m-auto shadow-lg py-3 px-5 rounded text-center">
-      <h2 class="form-title text-center border-bottom border-2 border-green">{% trans "Sign Up" %}</h2>
+    <div class="col-auto m-auto shadow-lg py-3 px-5 rounded text-center login-box-width">
+      <h2 class="form-title text-center border-bottom border-2 border-green">Create Account</h2>
 
       <form class="signup my-4" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
@@ -16,14 +16,17 @@
         {% if redirect_field_value %}
         <input class="rounded-pill" type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="btn btn-green text-uppercase text-spaced fw-bold" type="submit">{% trans "Sign Up" %}</button>
+        <button class="btn btn-red text-uppercase text-spaced fw-bold w-100" type="submit">
+          <i class="fa-solid fa-right-to-bracket"></i>
+          Create
+        </button>
       </form>
 
       <div class="pt-2">
         {% blocktrans %}
-        <p>Already have an account? Please     
-          <a class="text-red fw-bold text-uppercase pt-2" href="{{ login_url }}">
-            Sign In
+        <p>Already have an account?    
+          <a class="btn btn-red fw-bold text-uppercase text-spaced w-100" href="{{ login_url }}">
+            Log In
           </a>.
         </p> 
         {% endblocktrans %}

@@ -2,7 +2,7 @@
 {% load cloudinary %}
 
 <!DOCTYPE html>
-<html lang="en" class="h-100">
+<html lang="en">
 
 <head>
     <!-- Meta -->
@@ -33,7 +33,7 @@
 
 </head>
 
-<body class="d-flex flex-column v-100 h-100 white-bg">
+<body class="d-flex flex-column h-100 h-100 white-bg">
 
     <div class="v-100 m-0 bg-c-red">
             <!-- NavBar-->
@@ -78,10 +78,10 @@
                         <!-- NavBar options for viewers -->
                         {% else %}
                         <li class="nav-item me-auto text-uppercase">
-                            <a class="nav-link" href="{% url 'account_signup' %}">Signup</a>
-                        </li>
-                        <li class="nav-item me-auto text-uppercase">
-                            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                            <a class="nav-link" href="{% url 'account_login' %}">
+                                <i class="fa-solid fa-right-to-bracket"></i>Log In
+                                
+                            </a>
                         </li>
                         {% endif %}
                     </ul>

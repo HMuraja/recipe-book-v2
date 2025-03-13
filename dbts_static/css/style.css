@@ -90,6 +90,10 @@ body {
     color: var(--c-red);
 }
 /*Sing up and log in*/
+.login-box-width{
+    min-width: 500px;
+    margin: 5px;
+}
 .form-title{
     font-family: 'Fira Sans Condensed', sans-serif;
     color: var(--c-red);
