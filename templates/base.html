@@ -1,5 +1,11 @@
 {% load static %}
 {% load cloudinary %}
+{% url 'home' as home_url %}
+{% url 'account_logout' as about_url %}
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
+{% url 'recipe_share' as recipe_share_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -50,37 +56,43 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end me-3" id="navbarText">
                     <ul class="navbar-nav mb-2 mb-lg-0 w-fit ms-auto">
-                        <li class="nav-item me-auto text-uppercase f-theme  ">
-                            <a class="nav-link active " aria-current="page" href="{% url 'home' %}">
+                        <li class="nav-item me-auto f-theme  ms-1">
+                            <a class="nav-link {% if request.path == home_url %}active" aria-current="page{% endif %}" href="{% url 'home' %}">
                                 <i class="fa-solid fa-house"></i>
                                 Home
                             </a>
                         </li>
                         <!-- NavBar Options for Logged in users -->
                         {% if user.is_authenticated %}
-                        <li class="nav-item me-auto text-uppercase f-theme  ">
-                            <a class="nav-link" href="{% url 'account_logout' %}">
+                        <li class="nav-item me-auto f-theme ms-1">
+                            <a class="nav-link {% if request.path == logout_url %} active" aria-current="page{% endif %}" href="{% url 'account_logout' %}" >
                                 <i class="fa-solid fa-right-from-bracket"></i>
                                 Log out
                             </a>
                         </li>
-                        <li class="nav-item me-auto text-uppercase f-theme  ">
-                            <a class="nav-link" href="{% url 'recipe_share' %}">
+                        <li class="nav-item me-auto f-theme mx-1">
+                            <a class="nav-link {% if request.path == recipe_share_url %} active" aria-current="page{% endif %}" href="{% url 'recipe_share' %}">
                                 <i class="fa-solid fa-pen-to-square"></i>
                                 Share a Recipe
                             </a>
                         </li>
                         <!-- Displays user's username whne logged in -->
-                        <li class="nav-item me-auto d-flex justify-content-center align-items-center f-theme  ">
-                            <p class="m-0 username-nav-text px-2 py-1 rounded">
-                                <i class="fa-solid fa-user"></i>  <strong>{{ user.username }}</strong>                   
+                        <li class="nav-item d-flex justify-content-center align-items-center f-theme">
+                            <p class="m-0 username-nav-text py-1 rounded" >
+                                <i class="fa-solid fa-user text-red white-bg rounded-circle p-1 me-1"></i>  <strong>{{ user.username }}</strong>                   
                             </p>
                         </li>
                         <!-- NavBar options for viewers -->
                         {% else %}
-                        <li class="nav-item me-auto text-uppercase f-theme  ">
-                            <a class="nav-link" href="{% url 'account_login' %}">
+                        <li class="nav-item me-auto f-theme ms-1">
+                            <a class="nav-link {% if request.path == login_url %} active" aria-current="page{% endif %}" href="{% url 'account_login' %}">
                                 <i class="fa-solid fa-right-to-bracket"></i>Log In
+                                
+                            </a>
+                        </li>
+                        <li class="nav-item me-auto f-theme ms-1">
+                            <a class="nav-link {% if request.path == login_url %} active" aria-current="page{% endif %}" href="{% url 'account_signup' %}">
+                                <i class="fa-solid fa-right-to-bracket"></i>Create Account
                                 
                             </a>
                         </li>
@@ -88,7 +100,6 @@
                     </ul>
                 </div>
             </nav>
-    </div>
    
     <main class="container white-bg container-max-width">
         {% block content %}

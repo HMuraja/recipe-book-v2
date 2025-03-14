@@ -94,9 +94,7 @@ body {
 }
 
 .username-nav-text{
-    background-color: var(--c-soft-white);
-    border-radius: 5px;
-    color: var(--c-red);
+    color: var(--c-soft-white);
 }
 /*Sing up and log in*/
 .login-box-width{
