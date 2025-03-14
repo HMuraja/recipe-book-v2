@@ -3,12 +3,14 @@
 {% load crispy_forms_tags %}
 
 <!-- Recipe header -->
-<div class="row recipe-masthead-container flex-sm-row-reverse mt-2 g-0">
+<div class="row recipe-masthead-container flex-sm-row-reverse mt-2 mx-0 g-0 position-relative ">
+        <div class="border-2 border-white border position-absolute recipe-masthead-frame rounded">
+        </div>
         <div class="d-md-block col-md-6 masthead-image-container g-0">
             <img src=" {{ recipe.featured_image.url }}" alt="Image of the recipe dish" class="masthead-image">
         </div>
-        <div class="col-md-6 d-flex flex-column align-items-center justify-content-center ">
-            <h1 class="f-theme text-center">{{ recipe.name }}</h1>
+        <div class="col-md-6 bg-c-red d-flex flex-column py-2 align-items-center justify-content-center">
+            <h1 class="f-theme text-center ">{{ recipe.name }}</h1>
             <p class="text-spaced">{{ recipe.region }}, {{ recipe.city }}</p>
             <p class="text-spaced">By {{ recipe.author }}</p>
             <p> 

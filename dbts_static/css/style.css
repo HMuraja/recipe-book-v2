@@ -306,7 +306,6 @@ object-fit: cover;
 
 .recipe-masthead-container{
     overflow: hidden;
-    background-color: var(--c-red);
     color: var(--c-soft-white);
 }
 
@@ -321,6 +320,12 @@ object-fit: cover;
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.recipe-masthead-frame {
+    inset: 0; 
+    max-width: calc(100% - 2rem); 
+    margin: 1rem; 
 }
 
 .time-stamp-text{
