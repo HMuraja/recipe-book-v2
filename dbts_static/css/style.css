@@ -154,7 +154,7 @@ p:has(#id_remember) label{
 }
 
 .img-size{
-    max-height: 75%;
+    max-height: 80%;
     width: auto;
     object-fit: contain;
 }
@@ -236,21 +236,37 @@ object-fit: cover;
 /* RECIPE FORMS */
 
 .recipe-form-header{
-    height: 200px;
+    height: 180px;
     color: var(--c-green);
     border-bottom: solid 2px var(--c-green);
     border-top: solid 2px var(--c-green);
+}
+#id_region{
+    border: solid 1px var(--c-green);
 }
 #id_featured_image{
     border-bottom: none;
     color: var(--c-green);
 }
-
+.form-control-file{
+    margin: 5px;
+    margin-left: 5px !important;
+}
+#featured_image-clear_id{
+    margin-left: 5px;
+}
 .recipe-form label{
     margin-top: 5px;
     color: var(--c-green);
     font-family: var(--f-theme);
     font-weight: 600;
+}
+
+.recipe-form input:focus{
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    border-bottom: 2px solid var(--c-green);
 }
 
 .recipe-form input{
@@ -270,6 +286,8 @@ object-fit: cover;
 }
 .success-modal{
     max-width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 /* RECIPE DETAILS PAGE */
@@ -336,6 +354,7 @@ object-fit: cover;
 @media (max-width: 770px) {
     .img-size{
         max-width: 25%;
+        margin: 0 !important;
     }
     .center-col{
         max-width: 50%;

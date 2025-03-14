@@ -3,11 +3,12 @@
 {% load crispy_forms_tags %}
 {% load static %}
 
+<!-- Create recipe form header-->
 <div class="row">
     <div class="col d-flex align-items-center justify-content-center recipe-form-header my-2 py-2">
         <img class="img-size mx-1" src= "{% static 'img/dbts-cookbook.png'%}" alt="illustration">
         
-        <div class="d-flex align-items-center flex-column justify-content-center center-col w-auto">
+        <div class="mx-3 d-flex align-items-center flex-column justify-content-center center-col w-auto">
             <h2 class="f-theme fw-bold text-center text-center text-green text-uppercase ">
                 Share a Recipe
             </h2>
@@ -26,7 +27,7 @@
 <!-- Failed submission notification -->
 <div class="row my-1">
     <div class="col">
-        <p class="text-danger">
+        <p class="text-red">
             Recipe couldn't be shared!<br>
             Please check the required fields and try submitting again.
         </p>
@@ -39,7 +40,7 @@
         <form class="d-flex flex-column recipe-form text-start" method="post" style="margin-top: 1.3em;" enctype="multipart/form-data">
             {{ share_recipe_form | crispy }}
             {% csrf_token %}
-            <button type="submit" class="btn btn-yellow mt-1 w-50 fw-bold text-uppercase mx-auto">Create</button>
+            <button type="submit" class="btn f-theme btn-yellow mt-1 w-50 fw-bold text-uppercase mx-auto">Create</button>
         </form>
 </div>
 
