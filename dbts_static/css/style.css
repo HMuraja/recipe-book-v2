@@ -69,6 +69,10 @@ body {
     border-color: var(--c-red) !important;
 }
 
+.border-c-green{
+    border-color: var(--c-green) !important;
+}
+
 .text-red{
     color: var(--c-red) !important;
 }
@@ -77,8 +81,18 @@ body {
     color: var(--c-green);
 }
 
+.text-spaced{
+    letter-spacing: 1px;
+}
 
+.main-h{
+    height: 100%;
+    min-height: fit-content;
+}
 /*NAVIGATION*/
+.nav-h {
+    max-height: fit-content
+}
 .brand {
     max-height: 30px;
     width: auto;
@@ -196,7 +210,6 @@ p:has(#id_remember) label{
     margin: 2px;
 }
 
-
 .image-container {
     max-width: 100%;
 }
@@ -239,6 +252,7 @@ object-fit: cover;
     border-bottom: solid 2px var(--c-green);
     border-top: solid 2px var(--c-green);
 }
+
 #id_region{
     border: solid 1px var(--c-green);
 }
@@ -292,11 +306,8 @@ object-fit: cover;
 
 .recipe-masthead-container{
     overflow: hidden;
-}
-
-.masthead-text {
     background-color: var(--c-red);
-    color: #F5F0E6;
+    color: var(--c-soft-white);
 }
 
 .masthead-image-container {
@@ -312,31 +323,8 @@ object-fit: cover;
     object-fit: cover;
 }
 
-.btn-like{
-    background-color: transparent;
-    color: #f7f7f7;
-    border: none;
-}
-
-.border-top-bottom{
-    border-top: #333333 solid 1px;
-    border-bottom: #333333 solid 1px;
-}
-
-.recipe-ingerients{
-    background-color: transparent;
-
-}
-
-.recipe-sub-headers{
-    color: #333333;
-    font-family:var(--f-readable);
-}
-
-.recipe-body{
-    background-color: #333333;
-    font-family:var(--f-readable);
-    font-size: 1rem;
+.time-stamp-text{
+    font-size: 0.8rem;
 }
 
 .recipe-editing-messages{
