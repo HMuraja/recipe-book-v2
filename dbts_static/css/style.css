@@ -342,7 +342,27 @@ object-fit: cover;
     width:fit-content;
 }
 
+.btn-like{
+    border: none;
+    position: absolute;
+    background-color: transparent;
+    bottom: 35%;
+ 
+}
+
+.comment-form label{
+    font-family: var(--f-theme);
+    color: var(--c-soft-white);
+}
+
+.comment-form textarea{
+    border: solid 1px var(--c-soft-white);
+}
+
 @media (max-width: 770px) {
+    .btn-like{
+        bottom: 25px; 
+    }
     .img-size{
         max-width: 25%;
         margin: 0 !important;

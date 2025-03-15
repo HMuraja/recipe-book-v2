@@ -6,28 +6,33 @@
 <div class="row recipe-masthead-container flex-sm-row-reverse mt-2 mx-0 g-0 position-relative ">
         <div class="border-2 border-white border position-absolute recipe-masthead-frame rounded">
         </div>
-        <div class="d-md-block col-md-6 masthead-image-container g-0">
+        <div class="d-md-block col-md-6 masthead-image-container g-0 z-0">
             <img src=" {{ recipe.featured_image.url }}" alt="Image of the recipe dish" class="masthead-image">
         </div>
-        <div class="col-md-6 bg-c-red d-flex flex-column py-2 align-items-center justify-content-center">
+        <div class="col-md-6 bg-c-red d-flex flex-column py-2 align-items-center justify-content-center z-1">
             <h1 class="f-theme text-center ">{{ recipe.name }}</h1>
-            <p class="text-spaced">{{ recipe.region }}, {{ recipe.city }}</p>
-            <p class="text-spaced">By {{ recipe.author }}</p>
-            <p> 
+            <p class="text-spaced mb-1">{{ recipe.region }}, {{ recipe.city }}</p>
+            <p class="text-spaced mb-1">By {{ recipe.author }}</p>
+            <div class="d-flex"> 
             {% if user.is_authenticated %}
                 <form class="d-inline likes-for-authenticated" action="{% url 'recipe_like' recipe.slug %}" method="POST">
                     {% csrf_token %}
-                    {% if liked %}
-                    <button type="submit" name="recipe_id" value="{{recipe.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
-                    {% else %}
-                    <button type="submit" name="recipe_id" value="{{recipe.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
-                    {% endif %}
+                    <button type="submit" name="recipe_id" value="{{recipe.slug}}" class="btn-like text-white d-flex">
+                        {% if liked %}
+                        <i class="fas fa-heart my-auto"></i>
+                        {% else %}
+                        <i class="far fa-heart my-auto"></i>
+                        {% endif %}
+                        <p class="ms-2 mb-0">{{recipe.number_of_likes}}</p>
+                    </button>
+                    <p class="p-3"></p>
                 </form>
                 {% else %}              
                 <i class="far fa-heart"></i>
+                <p class="ms-2">{{recipe.number_of_likes}}</p>
             {% endif %}
-                {{recipe.number_of_likes}}
-            </p>
+            
+            </div>
         </div>
 </div>
 
@@ -67,30 +72,24 @@
                 <p class="recipe-body">{{ recipe.method | safe }}</p>
             </div>
         </div>
-    
 
-    
-        <div class="row pt-3">
-            <div class="col">
-                <!-- Buttons for logged in users -->
-                {% if user.is_authenticated  %}
-    
+        {% if recipe.author == user %}
+        <!-- Buttons for logged in users -->
+        <div class="row pb-3">
+            <div class="col mx-auto">
                 <!-- Edit button and link to the template -->
-                <a class="btn btn-yellow m-1" href="{% url 'edit_recipe' recipe.id %}"> Edit Recipe</a>
-                
+                <a class="btn btn-yellow f-theme m-1" href="{% url 'edit_recipe' recipe.id %}">
+                    <i class="fa-solid fa-right-to-bracket me-1"></i>
+                    Edit Recipe
+                </a>
+            
                 <!-- Delete Button -->
-                <button type="button" class="btn btn-red" data-bs-toggle="modal" data-bs-target="#delete-modal">
-                    Delete Recipe
-                  </button>
-    
-                <!-- Notification for users who are not aurthors -->
-                {% if recipe.author != user %}
-                <p class="text-danger"> Only the author of this recipe can edit or delete the recipe</p>
-                {% endif %}
-                
-                {% endif %}
+                <button type="button" class="btn btn-red f-theme" data-bs-toggle="modal" data-bs-target="#delete-modal">               
+                    <i class="fa-solid fa-trash-can me-1"></i> Delete Recipe
+                </button> 
             </div>
         </div>
+        {% endif %}
     
         <!-- Delete Recipe Modal and Link -->
         <div class="modal fade" id="delete-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -113,9 +112,9 @@
 
 <!-- Comment Section -->
 
-<div class="row border-2 border-bottom border-top border-c-green g-0">
-    <div class="col bg-green d-flex flex-nowrap text-white my-1">
-        <h3 class="f-theme m-2 text-redme-2">Comments</h3>
+<div class="row g-0 bg-green text-white mb-0 rounded-top">
+    <div class="col d-flex flex-nowrap my-1 px-2">
+        <h3 class="f-theme me-2 text-redme-2">Comments</h3>
         <!-- Icon displays comment number -->
         <i class="far fa-comments mx-2 my-auto"></i>
         <p class="fw-bold my-auto">
@@ -126,14 +125,14 @@
     </div>
 </div>
 
-<div class="row g-0">
-    <div class="col">
+<div class="row g-0 bg-green text-white mt-0 rounded-bottom">
+    <div class="col px-2 pb-2">
             <!-- Leave a comment Form -->
             {% if user.is_authenticated %}
-            <form method="post" style="margin-top: 1.3em;">
+            <form method="post" class="comment-form mt-2">
                 {{ comment_form | crispy }}
                 {% csrf_token %}
-                <button type="submit" class="btn btn-yellow mt-1">Submit</button>
+                <button type="submit" class="btn btn-yellow mt-1 f-theme mt-2">Submit</button>
             </form>
             {% endif %}
         </div>
@@ -142,7 +141,7 @@
 
 <div class="row g-0">
     <div class="col p-0">
-        <div class="card-body pt-0">
+        <div class="card-body pt-0 ">
             <!-- Loop through comments to display them -->
             {% for comment in comments %}
             <div class="shadow rounded my-4" style="padding: 10px;">
