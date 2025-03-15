@@ -34,7 +34,7 @@
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <!-- Css -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v2">
     <!-- Cloudniary -->
     <link rel="shortcut icon" href="{% static 'img/dbts_favicon.png'%}">
 
@@ -44,11 +44,11 @@
 
     <div class="m-0 bg-red">
             <!-- NavBar-->
-            <nav class="navbar container-max-width mx-auto navbar-expand-lg navbar-dark fs-6 ">
+            <nav class="navbar container-max-width mx-auto navbar-expand-lg navbar-dark">
                 <!-- Titlle, logo and 'home'-link -->
                 <a class="navbar-brand ms-3" href="{% url 'home' %}">
-                    <img class="brand mb-2" src= "{% static 'img/dbts_icon.png'%}" alt="logo"> 
-                    <img class="brand" src= "{% static 'img/dbts_logo_4_white.png'%}" alt="logo" class="d-inline-block align-text-top">
+                    <img class="logo mb-2" src= "{% static 'img/dbts_icon.png'%}" alt="logo"> 
+                    <img class="logo" src= "{% static 'img/dbts_logo_4_white.png'%}" alt="logo" class="d-inline-block align-text-top">
                 </a>
                 <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -78,8 +78,8 @@
                         </li>
                         <!-- Displays user's username whne logged in -->
                         <li class="nav-item d-flex justify-content-center align-items-center f-theme">
-                            <p class="m-0 username-nav-text py-1 rounded" >
-                                <i class="fa-solid fa-user text-red bg-white rounded-circle p-1 me-1"></i>  <strong>{{ user.username }}</strong>                   
+                            <p class="m-0 py-1 rounded text-white" >
+                                <i class="fa-solid fa-user text-red bg-white rounded-circle p-1 me-1"></i> {{ user.username }}                  
                             </p>
                         </li>
                         <!-- NavBar options for viewers -->

@@ -23,7 +23,7 @@
             {% endif %}
             <!-- Sharenrecipe Button only visible for the logged in users -->
             {% if user.is_authenticated %}
-            <a class="btn btn-yellow m-1 w-fit btn-text f-theme" href="{% url 'recipe_share' %}" type="button">
+            <a class="btn btn-yellow m-1 w-fit btn-text" href="{% url 'recipe_share' %}" type="button">
                 <i class="fa-solid fa-pen-to-square"></i> Share a Recipe</a>
             {% endif %}
         </div>
@@ -41,20 +41,20 @@
         <!-- Loop of all the recipe instances that are displayed as cards -->
         {% for recipe in recipe_list %}
             <div class="col-md-4 col-lg-3 mb-2 ">
-                <div class="card h-100 mb-4 card-hover">
+                <div class="card border border-0 h-100 mb-4 card-hover bg-white">
                     <a class="card-body post-link p-2" href="{% url 'recipe_detail' recipe.slug %}">
-                        <div class="image-container">
-                            <div class="image-wrapper">
-                                <img class="recipe-card-img" src=" {{ recipe.featured_image.url }}" alt="Recipes Feature Image">
+                        <div class="w-100">
+                            <div class="w-100 h-100 pb-auto position-relative img-wrapper">
+                                <img class="recipe-card-img w-100 h-100 position-absolute top-0 end-0" src=" {{ recipe.featured_image.url }}" alt="Recipes Feature Image">
                                 <p class="likes-overlay h5 mb-0 rounded-circle  border-c-red"><i class="far fa-heart "></i>
                                     {{ recipe.number_of_likes }}</p>
                             </div>
                         </div>
-                        <div class="recipe-card-layout  border-c-red py-2 border-bottom border-1">
+                        <div class="border-c-red py-2 border-bottom border-1">
                             <h3 class="f-theme mb-0 fw-bold text-red ">{{ recipe.name }}</h3>
                         </div>
-                        <p class="card-text h6 pt-2 text-green  ">{{ recipe.region}}, {{ recipe.city}}</p>
-                        <p class="card-text ">{{ recipe.excerpt }}</p>
+                        <p class="h6 pt-2 text-green  ">{{ recipe.region}}, {{ recipe.city}}</p>
+                        <p >{{ recipe.excerpt }}</p>
                     </a>
                 </div>
             </div>

@@ -35,6 +35,9 @@ body {
     letter-spacing: 1px;
     font-family: var(--f-theme);
 }
+.btn-text{
+    font-size: smaller;
+}
 
 .btn:hover{
     box-shadow: 0px 3px 3px 3px var(--c-dark-grey);
@@ -85,6 +88,10 @@ body {
     color: var(--c-green);
 }
 
+.text-white{
+    color: var(--c-soft-white);
+}
+
 /* Customised Font Parameters */
 .text-spaced{
     letter-spacing: 1px;
@@ -95,11 +102,7 @@ body {
 }
 
 /*NAVIGATION*/
-.nav-h {
-    max-height: fit-content
-}
-
-.brand {
+.logo {
     max-height: 30px;
     width: auto;
     object-fit: contain;
@@ -117,11 +120,10 @@ body {
     color: var(--c-soft-white);
 }
 /*Sing up and log in*/
-.login-box-width{
-    min-width: 500px;
-    margin: 5px;
-}
 
+.login-box-width{
+    min-width: 100%;
+}
 .login-form p{
     width: 100%;
     display: flex;
@@ -172,15 +174,10 @@ p:has(#id_remember) label{
 }
 
 .img-size{
-    max-height: 80%;
+    max-width: 25%;
+    margin: 0 !important;
     width: auto;
     object-fit: contain;
-}
-
-.recipe-card-layout {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .likes-parent{
@@ -191,7 +188,6 @@ p:has(#id_remember) label{
     position: absolute;
     right: 10px;
     top: 10px;
-    z-index: 50;
     color: var(--c-soft-white);
     background-color: var(--c-red);
     padding: 10px;
@@ -201,53 +197,23 @@ p:has(#id_remember) label{
     box-shadow: grey 3px 3px 3px 3px;
 }
 
-.light-grey{
-    background-color: #f7f7f7;
-    border: none;
-
-}
-
-.card {
-    border:transparent;
-    background-color: #F9FAFC;
-}
-
-.hr-margin{
-    margin: 2px;
-}
-
-.image-container {
-    max-width: 100%;
-}
-  
-.image-wrapper {
-position: relative;
-width: 100%;
+.img-wrapper {
 padding-bottom: 100%;
 overflow: hidden;
 }
 
 .recipe-card-img {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
 object-fit: cover;
 }
 
 .post-link {
     text-decoration: none;
-    color: #030303;
+    color: var(--c-dark-grey);
 }
 
 .post-link:hover,
 .page-link {
     color: var(--c-red);
-}
-
-.grey-title {
-    color: rgb(76, 79, 84);
 }
 
 /* RECIPE FORMS */
@@ -352,7 +318,7 @@ object-fit: cover;
     border: none;
     position: absolute;
     background-color: transparent;
-    bottom: 35%;
+    bottom: 25px;
  
 }
 
@@ -365,25 +331,16 @@ object-fit: cover;
     border: solid 1px var(--c-soft-white);
 }
 
-@media (max-width: 770px) {
+@media (min-width: 770px) {
     .btn-like{
-        bottom: 25px; 
+        bottom: 35%; 
     }
     .img-size{
-        max-width: 25%;
-        margin: 0 !important;
+        max-height: 80%;
     }
-    .center-col{
-        max-width: 50%;
-    }
-    
+
     .btn-text{
-        font-size: smaller;
-        letter-spacing: 1px;
+        font-size: medium;
     }
-    .brand {
-        max-height: 20px;
-        width: auto;
-        object-fit: contain;
-    }
+
 }
