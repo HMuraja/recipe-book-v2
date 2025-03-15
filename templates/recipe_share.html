@@ -40,7 +40,7 @@
         <form class="d-flex flex-column recipe-form text-start" method="post" style="margin-top: 1.3em;" enctype="multipart/form-data">
             {{ share_recipe_form | crispy }}
             {% csrf_token %}
-            <button type="submit" class="btn f-theme btn-yellow mt-1 w-50 fw-bold text-uppercase mx-auto">Create</button>
+            <button type="submit" class="btn btn-yellow mt-1 w-50 mx-auto">Create</button>
         </form>
 </div>
 
@@ -65,8 +65,8 @@
              You just created a recipe. You can continue creating recipes or return to view the recipes. 
             </p>
             <div class="w-100 modal-footer justify-content-between flex-nowrap">
-                <a href= "{% url 'recipe_share' %}" type="button" class="btn btn-text btn-yellow mt-1 fw-bold text-uppercase w-50">Share another recipe!</a>
-                <a href="{% url 'home' %}" type="button" class="btn btn-text btn-yellow mt-1 fw-bold text-uppercase w-50">View Recipes</a>
+                <a href= "{% url 'recipe_share' %}" type="button" class="btn btn-text btn-yellow mt-1 w-50">Share another recipe!</a>
+                <a href="{% url 'home' %}" type="button" class="btn btn-text btn-yellow mt-1 w-50">View Recipes</a>
             </div>
         </div>
     </div>  

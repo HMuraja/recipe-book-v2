@@ -8,7 +8,7 @@
 {% block content %}
   <div class="row h-100">
     <div class="col-auto m-auto shadow-lg py-3 px-5 rounded text-center login-box-width">
-      <h2 class="f-theme fw-bold text-center border-bottom border-2 border-green text-red pb-1">Create Account</h2>
+      <h2 class="f-theme fw-bold text-center border-bottom border-2 border-c-red text-red pb-1">Create Account</h2>
 
       <form id="login-form" class="login-form signup my-4" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
@@ -16,7 +16,7 @@
         {% if redirect_field_value %}
         <input class="rounded-pill" type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="btn btn-red f-theme  fw-bold w-100" type="submit">
+        <button class="btn btn-red w-100" type="submit">
           <i class="fa-solid fa-right-to-bracket"></i>
           Create
         </button>
@@ -25,7 +25,7 @@
       <div class="pt-2">
         {% blocktrans %}
         <p>Already have an account?    
-          <a class="btn btn-red fw-bold  f-theme w-100" href="{{ login_url }}">
+          <a class="btn btn-red w-100" href="{{ login_url }}">
             <i class="fa-solid fa-right-to-bracket"></i>
             Log In
           </a>.

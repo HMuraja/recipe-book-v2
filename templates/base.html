@@ -34,15 +34,15 @@
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <!-- Css -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}?v2">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- Cloudniary -->
     <link rel="shortcut icon" href="{% static 'img/dbts_favicon.png'%}">
 
 </head>
 
-<body class="d-flex flex-column white-bg vh-100">
+<body class="d-flex flex-column bg-white vh-100">
 
-    <div class="m-0 bg-c-red">
+    <div class="m-0 bg-red">
             <!-- NavBar-->
             <nav class="navbar container-max-width mx-auto navbar-expand-lg navbar-dark fs-6 ">
                 <!-- Titlle, logo and 'home'-link -->
@@ -79,7 +79,7 @@
                         <!-- Displays user's username whne logged in -->
                         <li class="nav-item d-flex justify-content-center align-items-center f-theme">
                             <p class="m-0 username-nav-text py-1 rounded" >
-                                <i class="fa-solid fa-user text-red white-bg rounded-circle p-1 me-1"></i>  <strong>{{ user.username }}</strong>                   
+                                <i class="fa-solid fa-user text-red bg-white rounded-circle p-1 me-1"></i>  <strong>{{ user.username }}</strong>                   
                             </p>
                         </li>
                         <!-- NavBar options for viewers -->
@@ -91,7 +91,7 @@
                             </a>
                         </li>
                         <li class="nav-item me-auto f-theme ms-1">
-                            <a class="nav-link {% if request.path == login_url %} active" aria-current="page{% endif %}" href="{% url 'account_signup' %}">
+                            <a class="nav-link {% if request.path == signup_url %} active" aria-current="page{% endif %}" href="{% url 'account_signup' %}">
                                 <i class="fa-solid fa-right-to-bracket"></i> Create Account
                                 
                             </a>
@@ -102,7 +102,7 @@
             </nav>
     </div>
 
-    <main class="container white-bg container-max-width main-h">
+    <main class="container bg-white container-max-width main-h">
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
@@ -112,7 +112,7 @@
     <footer class= "bg-green bottom-0 w-100 py-3 text-light mt-auto text-center">
         <p class="text-uppercase w-auto mb-2 d-inline-block fw-bolder border-bottom border-2 f-theme">Find out more</p> 
         <br/>
-        <a href="https://github.com/HMuraja/mythology-quiz" rel="noopener" aria-label="Visit the authors GitHub profile (opens in a new tab)" class="fs-3 text-light px-1" target="_blank">
+        <a href="https://github.com/HMuraja/p4-recipe-book" rel="noopener" aria-label="Visit the authors GitHub profile (opens in a new tab)" class="fs-3 text-light px-1" target="_blank">
             <i class="fa-brands fa-github"></i></a>
         <a href="https://linkedin.com/in/hilla-muraja-093127114" rel="noopener" aria-label="Visit the authors LinkedIn profile (opens in a new tab)" class="fs-3 text-light px-1" target="_blank">
             <i class="fa-brands fa-linkedin"></i></a>

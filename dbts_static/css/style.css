@@ -1,13 +1,9 @@
 /*GENERAL*/
 body {
-    background-color: #F9FAFC;
+    background-color: var(--c-soft-white);
     font-family:var(--f-readable);
     font-size: 1rem;
-}
-
-.container-max-width{
-    max-width: 1700px;
-    box-sizing: border-box;
+    color: var(--c-dark-grey);
 }
 
 :root {
@@ -16,44 +12,52 @@ body {
     --c-red: #75242F; 
     --c-dark-grey: #333333;
     --c-soft-white: #F9FAFC;
-    --c-cream: #f8efdb;
     --f-theme: 'Agbalumo', sans-serif;
     --f-readable: 'Dosis', sans-serif;
 }
 
-.f-theme{
+/* Custom Layout Parameters */
+
+.container-max-width{
+    max-width: 1700px;
+    box-sizing: border-box;
+}
+.main-h{
+    height: 100%;
+    min-height: fit-content;
+}
+
+/* Customised Buttons */
+
+.btn{
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 1px;
     font-family: var(--f-theme);
 }
 
-.btn-green {
-    background-color: var(--c-green);
+.btn:hover{
+    box-shadow: 0px 3px 3px 3px var(--c-dark-grey);
     color: var(--c-soft-white);
-    border: none;
-    border-radius: 5px;
-    letter-spacing: 1px;
 }
+
 .btn-red {
     background-color: var(--c-red);
     color: var(--c-soft-white);
-    border: none;
-    border-radius: 5px;
-    letter-spacing: 1px;
 }
 .btn-yellow {
     background-color: var(--c-yellow);
     color: var(--c-soft-white);
-    border: none;
-    border-radius: 5px;
-    letter-spacing: 1px;
 }
 .btn-red-border {
     background-color: var(--c-soft-white);
     color: var(--c-red);
     border: 2px solid var(--c-red);
-    border-radius: 5px;
 }
 
-.white-bg {
+/* Customised colors */
+
+.bg-white {
     background-color: var(--c-soft-white);
 }
 
@@ -61,11 +65,11 @@ body {
     background-color: var(--c-green);
 }
 
-.bg-c-red{
+.bg-red{
     background-color: var(--c-red);
 }
 
-.border-green{
+.border-c-red{
     border-color: var(--c-red) !important;
 }
 
@@ -81,18 +85,20 @@ body {
     color: var(--c-green);
 }
 
+/* Customised Font Parameters */
 .text-spaced{
     letter-spacing: 1px;
 }
 
-.main-h{
-    height: 100%;
-    min-height: fit-content;
+.f-theme{
+    font-family: var(--f-theme);
 }
+
 /*NAVIGATION*/
 .nav-h {
     max-height: fit-content
 }
+
 .brand {
     max-height: 30px;
     width: auto;

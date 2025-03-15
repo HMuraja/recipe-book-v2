@@ -10,7 +10,7 @@
 
 <div class="row h-100 login-box-width">
   <div class="col-auto m-auto shadow-lg py-4 px-5 rounded text-center login-box-width ">
-    <h2 class="f-theme fw-bold border-bottom border-2 text-red border-green pb-1">Login</h2>
+    <h2 class="f-theme fw-bold border-bottom border-2 text-red  border-c-red pb-1">Login</h2>
 
     <form id="login-form" class="login-form login my-4" method="POST" action="{% url 'account_login' %}">
       {% csrf_token %}
@@ -18,13 +18,13 @@
       {% if redirect_field_value %}
       <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
       {% endif %}
-      <button class="btn btn-red f-theme w-100" type="submit">
+      <button class="btn btn-red w-100" type="submit">
         <i class="fa-solid fa-right-to-bracket"></i>
         Log In
       </button>   
     </form>
     <p>{% blocktrans %}Don't have an account?
-      <a class="btn btn-red fw-bold  w-100" href="{{ signup_url }}">
+      <a class="btn btn-red w-100" href="{{ signup_url }}">
         <i class="fa-solid fa-user-plus"></i>
         Create an Account
       </a>

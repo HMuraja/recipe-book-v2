@@ -9,7 +9,7 @@
         <div class="d-md-block col-md-6 masthead-image-container g-0 z-0">
             <img src=" {{ recipe.featured_image.url }}" alt="Image of the recipe dish" class="masthead-image">
         </div>
-        <div class="col-md-6 bg-c-red d-flex flex-column py-2 align-items-center justify-content-center z-1">
+        <div class="col-md-6 bg-red d-flex flex-column py-2 align-items-center justify-content-center z-1">
             <h1 class="f-theme text-center ">{{ recipe.name }}</h1>
             <p class="text-spaced mb-1">{{ recipe.region }}, {{ recipe.city }}</p>
             <p class="text-spaced mb-1">By {{ recipe.author }}</p>
@@ -78,13 +78,13 @@
         <div class="row pb-3">
             <div class="col mx-auto">
                 <!-- Edit button and link to the template -->
-                <a class="btn btn-yellow f-theme m-1" href="{% url 'edit_recipe' recipe.id %}">
+                <a class="btn btn-yellow m-1" href="{% url 'edit_recipe' recipe.id %}">
                     <i class="fa-solid fa-right-to-bracket me-1"></i>
                     Edit Recipe
                 </a>
             
                 <!-- Delete Button -->
-                <button type="button" class="btn btn-red f-theme" data-bs-toggle="modal" data-bs-target="#delete-modal">               
+                <button type="button" class="btn btn-red" data-bs-toggle="modal" data-bs-target="#delete-modal">               
                     <i class="fa-solid fa-trash-can me-1"></i> Delete Recipe
                 </button> 
             </div>
@@ -132,7 +132,7 @@
             <form method="post" class="comment-form mt-2">
                 {{ comment_form | crispy }}
                 {% csrf_token %}
-                <button type="submit" class="btn btn-yellow mt-1 f-theme mt-2">Submit</button>
+                <button type="submit" class="btn btn-yellow mt-1 mt-2">Submit</button>
             </form>
             {% endif %}
         </div>

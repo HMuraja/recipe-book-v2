@@ -40,7 +40,7 @@
         <form class="d-flex flex-column recipe-form text-start" method="post" style="margin-top: 1.3em;" enctype="multipart/form-data">
             {{ share_recipe_form|crispy }}
             {% csrf_token %}
-            <button type="submit" class="btn f-theme btn-yellow mt-1 w-50 fw-bold text-uppercase mx-auto">Save</button>
+            <button type="submit" class="btn btn-yellow mt-1 w-50 mx-auto">Save</button>
         </form>
     </div>
 </div>
@@ -66,8 +66,8 @@
             You succesfully edited the recipe. 
             </p>
             <div class="w-100 modal-footer justify-content-between flex-nowrap">
-                <a href= "{% url 'recipe_detail' recipe.slug %}" type="button" class="f-theme btn btn-text btn-yellow mt-1 fw-bold text-uppercase ">View my edited Recipe</a>
-                <a href="{% url 'home' %}" type="button" class="f-theme btn btn-text btn-yellow mt-1 fw-bold text-uppercase">View All Recipes</a>
+                <a href= "{% url 'recipe_detail' recipe.slug %}" type="button" class="btn btn-text btn-yellow mt-1">View my edited Recipe</a>
+                <a href="{% url 'home' %}" type="button" class="btn btn-text btn-yellow mt-1">View All Recipes</a>
             </div>
         </div>
     </div>  
