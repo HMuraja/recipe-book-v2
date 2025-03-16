@@ -34,7 +34,7 @@
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <!-- Css -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}?v2">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- Cloudniary -->
     <link rel="shortcut icon" href="{% static 'img/dbts_favicon.png'%}">
 
@@ -46,7 +46,7 @@
             <!-- NavBar-->
             <nav class="navbar container-max-width mx-auto navbar-expand-lg navbar-dark">
                 <!-- Titlle, logo and 'home'-link -->
-                <a class="navbar-brand ms-3" href="{% url 'home' %}">
+                <a class="navbar-brand ms-3 me-0" href="{% url 'home' %}">
                     <img class="logo mb-2" src= "{% static 'img/dbts_icon.png'%}" alt="logo"> 
                     <img class="logo" src= "{% static 'img/dbts_logo_4_white.png'%}" alt="logo" class="d-inline-block align-text-top">
                 </a>

@@ -3,27 +3,27 @@
 {% load crispy_forms_tags %}
 
 <!-- Recipe header -->
-<div class="row recipe-masthead-container flex-sm-row-reverse mt-2 mx-0 g-0 position-relative ">
+<div class="row recipe-masthead-container flex-md-row-reverse mt-2 mx-0 g-0 position-relative text-white shadow rounded">
         <div class="border-2 border-white border position-absolute recipe-masthead-frame rounded">
         </div>
-        <div class="d-md-block col-md-6 masthead-image-container g-0 z-0">
-            <img src=" {{ recipe.featured_image.url }}" alt="Image of the recipe dish" class="masthead-image">
+        <div class="col col-12 col-md-6 masthead-image-container g-0 z-0">
+            <img src=" {{ recipe.featured_image.url }}" alt="Image of the recipe dish" class="masthead-image h-100 w-100">
         </div>
-        <div class="col-md-6 bg-red d-flex flex-column py-2 align-items-center justify-content-center z-1">
+        <div class="col col-12 col-md-6 bg-red d-flex flex-column py-2 align-items-center justify-content-center g-0 z-1">
             <h1 class="f-theme text-center ">{{ recipe.name }}</h1>
             <p class="text-spaced mb-1">{{ recipe.region }}, {{ recipe.city }}</p>
             <p class="text-spaced mb-1">By {{ recipe.author }}</p>
-            <div class="d-flex"> 
+            <div class="d-flex "> 
             {% if user.is_authenticated %}
                 <form class="d-inline likes-for-authenticated" action="{% url 'recipe_like' recipe.slug %}" method="POST">
                     {% csrf_token %}
-                    <button type="submit" name="recipe_id" value="{{recipe.slug}}" class="btn-like text-white d-flex">
+                    <button type="submit" name="recipe_id" value="{{recipe.slug}}" class="btn-like position-absolute d-flex">
                         {% if liked %}
-                        <i class="fas fa-heart my-auto"></i>
+                        <i class="fas fa-heart my-auto text-white"></i>
                         {% else %}
-                        <i class="far fa-heart my-auto"></i>
+                        <i class="far fa-heart my-auto text-white"></i>
                         {% endif %}
-                        <p class="ms-2 mb-0">{{recipe.number_of_likes}}</p>
+                        <p class="ms-2 mb-0 text-white">{{recipe.number_of_likes}}</p>
                     </button>
                     <p class="p-3"></p>
                 </form>
@@ -37,7 +37,7 @@
 </div>
 
 <!-- Recipe Content -->
-<div class="row mb-2 g-0">
+<div class="row mb-2 g-0 rounded shadow p-2">
     <div class="col mb-1 ">
 
         <div class="row ">
@@ -55,7 +55,7 @@
         </div> 
     
         <div class="row">
-            <div class="col-md-auto card recipe-ingerients">
+            <div class="colcard recipe-ingerients border-none">
                 <h3 class="f-theme text-red">Ingredients</h3>
                 <div class="">
                     <p class="text-spaced m-0 fw-bolder w-auto">Serves: {{ recipe.serves }}</p>
@@ -108,11 +108,12 @@
                 </div>
             </div>  
         </div>  
+    </div>
 </div>
 
 <!-- Comment Section -->
 
-<div class="row g-0 bg-green text-white mb-0 rounded-top">
+<div class="row g-0 text-green mb-0 rounded-top">
     <div class="col d-flex flex-nowrap my-1 px-2">
         <h3 class="f-theme me-2 text-redme-2">Comments</h3>
         <!-- Icon displays comment number -->
@@ -125,27 +126,26 @@
     </div>
 </div>
 
-<div class="row g-0 bg-green text-white mt-0 rounded-bottom">
+<div class="row g-0 text-green mt-0 rounded-bottom">
     <div class="col px-2 pb-2">
-            <!-- Leave a comment Form -->
-            {% if user.is_authenticated %}
-            <form method="post" class="comment-form mt-2">
-                {{ comment_form | crispy }}
-                {% csrf_token %}
-                <button type="submit" class="btn btn-yellow mt-1 mt-2">Submit</button>
-            </form>
-            {% endif %}
-        </div>
+        <!-- Leave a comment Form -->
+        {% if user.is_authenticated %}
+        <form method="post" class="comment-form mt-2 ">
+            {{ comment_form | crispy }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-yellow mt-1 mt-2">Submit</button>
+        </form>
+        {% endif %}
     </div>
 </div>
 
 <div class="row g-0">
     <div class="col p-0">
-        <div class="card-body pt-0 ">
+        <div class="pt-0 ">
             <!-- Loop through comments to display them -->
             {% for comment in comments %}
-            <div class="shadow rounded my-4" style="padding: 10px;">
-                <p class="font-weight-bold">
+            <div class="my-3 p-2 mx-1 comment-paragraph-margin" style="padding: 10px;">
+                <p class="font-weight-bold border-bottom border-1 border-muted ">
                     <i class="fa-solid fa-user"></i>
                     <strong> {{ comment.name }}</strong>
                     <span class=" text-muted font-weight-normal text-spaced">
@@ -153,7 +153,6 @@
                     </span>
                 </p >
                 {{ comment.body | linebreaks }}
-
             </div>
             {% endfor %}
         </div>

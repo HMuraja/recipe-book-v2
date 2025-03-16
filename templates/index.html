@@ -34,39 +34,34 @@
 </div>
 
 <!-- Recipes Selction/List --> 
-
-<div class="row mb-2">
-    <div class="col mt-3">
-        <div class="row">
-        <!-- Loop of all the recipe instances that are displayed as cards -->
-        {% for recipe in recipe_list %}
-            <div class="col-md-4 col-lg-3 mb-2 ">
-                <div class="card border border-0 h-100 mb-4 card-hover bg-white">
-                    <a class="card-body post-link p-2" href="{% url 'recipe_detail' recipe.slug %}">
-                        <div class="w-100">
-                            <div class="w-100 h-100 pb-auto position-relative img-wrapper">
-                                <img class="recipe-card-img w-100 h-100 position-absolute top-0 end-0" src=" {{ recipe.featured_image.url }}" alt="Recipes Feature Image">
-                                <p class="likes-overlay h5 mb-0 rounded-circle  border-c-red"><i class="far fa-heart "></i>
-                                    {{ recipe.number_of_likes }}</p>
-                            </div>
-                        </div>
-                        <div class="border-c-red py-2 border-bottom border-1">
-                            <h3 class="f-theme mb-0 fw-bold text-red ">{{ recipe.name }}</h3>
-                        </div>
-                        <p class="h6 pt-2 text-green  ">{{ recipe.region}}, {{ recipe.city}}</p>
-                        <p >{{ recipe.excerpt }}</p>
-                    </a>
-                </div>
+    
+<div class="row my-4 gy-2">
+<!-- Loop of all the recipe instances that are displayed as cards -->
+{% for recipe in recipe_list %}
+    <div class=" col col-12 col-xl-3 col-sm-6 col-md-4" href="{% url 'recipe_detail' recipe.slug %}">
+        <a class="card border border-0 card-hover bg-white post-link w-100 h-100" href="{% url 'recipe_detail' recipe.slug %}">
+            <div class="position-relative img-wrapper">
+                <img class="recipe-card-img h-100 w-100 rounded-top" src=" {{ recipe.featured_image.url }}" alt="Recipes Feature Image">
+                <p class="likes-overlay h5 mb-0 rounded-circle  border-c-red">
+                    <i class="far fa-heart "></i>
+                    {{ recipe.number_of_likes }}
+                </p>
             </div>
-            <!-- Pagination after 6 recipe cards -->
-            {% if forloop.counter|divisibleby:8 %}
-        </div>
-        <div class="row">
-            {% endif %}
-            {% endfor %}
-        </div>
+            <div class="card-body h-auto p-1 m-0">
+                <h3 class="f-theme mb-0 fw-bold text-red border-c-red pb-1 border-bottom border-1">{{ recipe.name }}</h3>
+                <p class="h6 text-green  ">{{ recipe.region}}, {{ recipe.city}}</p>
+                <p >{{ recipe.excerpt }}</p>
+            </div>
+        </a>
     </div>
+    <!-- Pagination after 8 recipe cards -->
+    {% if forloop.counter|divisibleby:8 %}
 </div>
+<div class="row">
+    {% endif %}
+    {% endfor %}
+</div>
+
 <!-- Pagination logic, taken from the 'I thik Therefore I Blog'CI Walkthrough project-->
 {% if is_paginated %}
 <nav class="row" aria-label="Page navigation">

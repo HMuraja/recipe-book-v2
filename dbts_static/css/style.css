@@ -103,7 +103,7 @@ body {
 
 /*NAVIGATION*/
 .logo {
-    max-height: 30px;
+    max-height: 23px;
     width: auto;
     object-fit: contain;
 }
@@ -192,18 +192,20 @@ p:has(#id_remember) label{
     background-color: var(--c-red);
     padding: 10px;
 }
+.card{
+}
 
 .card-hover:hover{
     box-shadow: grey 3px 3px 3px 3px;
 }
 
 .img-wrapper {
-padding-bottom: 100%;
-overflow: hidden;
+height: 300px;
 }
 
 .recipe-card-img {
 object-fit: cover;
+object-position: center;
 }
 
 .post-link {
@@ -282,16 +284,12 @@ object-fit: cover;
 }
 
 .masthead-image-container {
-    height: 100%;
-    max-height: 50vh;
-    display: flex!important;
-    align-items: center;
+    height: 50vh;
 }
 
 .masthead-image {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
+    object-position: center;
 }
 
 .recipe-masthead-frame {
@@ -309,14 +307,13 @@ object-fit: cover;
     color: var(--c-red);
     padding-left:0;
     border: var(--c-red) solid 1px;
-    background-color: #fbdada;
+    background-color: var(--c-soft-white);
     border-radius: 5px;
     width:fit-content;
 }
 
 .btn-like{
     border: none;
-    position: absolute;
     background-color: transparent;
     bottom: 25px;
  
@@ -324,17 +321,27 @@ object-fit: cover;
 
 .comment-form label{
     font-family: var(--f-theme);
-    color: var(--c-soft-white);
+    color: var(--c-green);
 }
 
 .comment-form textarea{
-    border: solid 1px var(--c-soft-white);
+    border: solid 1px var(--c-green);
+    box-shadow: inset 0 0 10px rgba(8, 8, 8, 0.279);
+}
+
+.comment-paragraph-margin p{
+    margin: 4px;
 }
 
 @media (min-width: 770px) {
+    .logo {
+        max-height: 30px;
+    }
+
     .btn-like{
         bottom: 35%; 
     }
+
     .img-size{
         max-height: 80%;
     }
