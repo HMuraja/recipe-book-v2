@@ -192,8 +192,6 @@ p:has(#id_remember) label{
     background-color: var(--c-red);
     padding: 10px;
 }
-.card{
-}
 
 .card-hover:hover{
     box-shadow: grey 3px 3px 3px 3px;
